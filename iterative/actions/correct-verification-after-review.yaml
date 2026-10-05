@@ -9,8 +9,8 @@ types:
 subjects: select("current-verification-activities@1", {})
 inputs:
   activity: subject
-  failure: 'one("fail-reviews@1", {subject: subject})'
-when: 'exists("fail-reviews@1", {subject: subject})'
+  failure: 'one("fail-reviews@2", {subject: subject})'
+when: 'exists("fail-reviews@2", {subject: subject})'
 priority: 90
 links: {}
 fixed_payload:

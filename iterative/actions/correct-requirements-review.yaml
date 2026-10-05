@@ -1,0 +1,25 @@
+kind: action-definition
+id: correct-requirements-review
+version: 1
+description: Independently correct an acknowledged error in the current failed requirements judgment
+capability: review
+prompt_ref: prompts/correct-requirements-review.md@1
+types: [REV]
+subjects: select("current-requirements@1", {})
+inputs:
+  interfaces: 'select("selected-interfaces@1", {requirements: subject})'
+  subject: subject
+  failure: 'one("fail-reviews@2", {subject: subject})'
+when: 'count("fail-reviews@2", {subject: subject}) == 1 && none("accepted-requirements-set@1", {requirements: subject})'
+optional: true
+priority: 100
+links:
+  REV:
+    reviews: subject
+    supersedes: failure
+fixed_payload:
+  REV:
+    publication: recorded
+authority:
+  kind: independent-review
+  name: independent-reviewer

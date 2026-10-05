@@ -1,0 +1,20 @@
+kind: selector-definition
+id: accepted-requirements-set
+version: 1
+description: Exact accepted requirement selection
+parameters:
+- name: requirements
+  kind: revision
+  types: [RQS]
+result_kind: revision
+query:
+  from:
+    relation: incoming-links
+    of: requirements
+    link: confirms
+    emit: source
+    types: [ACC]
+  as: item
+  where: 'state(item, "validity") == "valid" && item.integrity.transaction_valid == true && item.payload.decision == "accept"'
+  distinct: true
+  order_by: [identity.revision_id]

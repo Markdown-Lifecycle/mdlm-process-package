@@ -27,3 +27,7 @@ Existing products keep their installed package copies. Installing this distribut
 The tested counterpart is recorded in the kernel split evidence. Required contracts remain mdlm-direct@1, mdlm-expression@1 and the kernel capabilities in each manifest. The historical minimum_kernel field is metadata and does not prove compatibility with independently numbered kernels.
 
 Install an exact private Git commit with npm, or install the packed data tarball. Kernel 0.1.0 resolves catalog.json to select its existing tiny, exploratory and iterative alternatives. Release notes and provenance live outside the digest roots.
+
+## 2.5.26
+
+Requires the kernel review-correction@1 service, introduced in kernel0.1.1. Older kernels reject this package. Compatible upgrade adds this service without rebinding existing capabilities or rewriting lifecycle history. A current unaccepted failed requirements review now offers an independently registered corrected judgment, preserving the original failure and correction reason.

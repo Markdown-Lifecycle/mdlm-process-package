@@ -1,6 +1,6 @@
 kind: type-definition
 id: REV
-version: 3
+version: 4
 description: Independent content Review
 name: Independent content Review
 extends: titled-datum@1
@@ -24,6 +24,9 @@ payload_schema:
       enum:
       - pass
       - fail
+    correction_reason:
+      type: string
+      minLength: 1
     findings:
       type: string
       minLength: 1
@@ -144,5 +147,16 @@ outgoing_links:
     maximum: many
   freeze_resolution: already-exact
   inverse_label: incoming-uses-evidence
+- id: supersedes
+  description: Corrects an acknowledged error in an exact failed requirements judgment
+  targets:
+  - kind: datum
+    types: [REV]
+    identity: revision
+  cardinality:
+    minimum: 0
+    maximum: 1
+  freeze_resolution: already-exact
+  inverse_label: incoming-supersedes
 kernel_managed_payload_paths:
 - scope_amendment_required
