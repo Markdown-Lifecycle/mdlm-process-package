@@ -1,9 +1,9 @@
 kind: action-definition
 id: rebind-product
-version: 21
+version: 22
 description: Bind unchanged or corrected product to revised expectations
 capability: implementation
-prompt_ref: prompts/rebind-product.md@31
+prompt_ref: prompts/rebind-product.md@32
 types:
 - IMP
 subjects: select("current-requirements@1", {})

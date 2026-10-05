@@ -1,10 +1,10 @@
 ---
 id: rebind-product
-version: 31
+version: 32
 skills:
 - skills/product-quality.md@8
 - skills/typed-requirements.md@21
-- skills/source-trace.md@9
+- skills/source-trace.md@10
 ---
 
 # Bind the product to the current requirements
