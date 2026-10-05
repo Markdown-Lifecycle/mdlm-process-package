@@ -104,7 +104,7 @@ mdlm --version
 mdlm release-notes
 ```
 
-This guidance-only2.5.24 target supports explicit adoption from mdlm-iterative@2.5.23 when the kernel validates unchanged contracts and capabilities and validates existing data against the target schemas. The historical minimum_kernel field is descriptive metadata, not proof of compatibility. The concrete tested kernel identity belongs in release qualification evidence.
+This compatible2.5.25 target supports explicit adoption from mdlm-iterative@2.5.23 when the kernel validates unchanged contracts and capabilities and validates existing data against the target schemas. The historical minimum_kernel field is descriptive metadata, not proof of compatibility. The concrete tested kernel identity belongs in release qualification evidence.
 
 From the existing lifecycle repository, inspect the exact independently installed target and save the full preview before adopting it:
 
@@ -118,3 +118,9 @@ mdlm expectations --json
 Read the preview's release notes and before/after expectations. Apply only the intended compatible update, preserving the returned transaction result. Use settlement for an uncertain result before further work. A changed repository or target requires a new preview.
 
 The upgrade retains original package copies, immutable lifecycle data and historical reviews. Target expectations determine current work; package version changes alone do not require blanket reverification. This target adds no lifecycle obligation, so a completed accepted product should stay at its truthful boundary. If another target introduces work, follow its eligible actions and normal stakeholder and independent-review authority.
+
+## Historical applicability after compatible adoption
+
+Version 2.5.24 exposed a defect during an accepted-product copy upgrade: authentic historical requirements and acceptance remained intact, but package identity comparison hid the formal graph and its optional maintenance actions. Version 2.5.25 corrects validity to use substantive integrity and authenticated transaction checks. A different historical authoring package reference alone does not invalidate a preserved datum.
+
+This keeps applicable accepted work visible after compatible adoption. It does not rewrite provenance, replace historical reviews, or assume that an earlier PASS satisfies a newly introduced obligation. The selected target's normal expectations and evidence dependencies still decide what work remains.

@@ -1,7 +1,7 @@
 kind: state-definition
 id: validity
-version: 1
-description: Kernel integrity and package identity.
+version: 2
+description: Authenticated datum integrity across compatible package selections.
 subject_as: subject
 cardinality: exactly-one
 default: valid
@@ -12,6 +12,5 @@ rules:
 - value: invalid
   priority: 100
   when: subject.integrity.parseable == false || subject.integrity.schema_valid == false || subject.integrity.identity_valid
-    == false || subject.integrity.references_valid == false || subject.integrity.hash_valid == false || subject.provenance.process_ref
-    != process.current_ref
-  explanation: Invalid integrity or a different Process Package identity.
+    == false || subject.integrity.references_valid == false || subject.integrity.hash_valid == false || subject.integrity.transaction_valid == false
+  explanation: Invalid integrity or an unauthenticated publication transaction.
