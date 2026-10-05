@@ -94,3 +94,27 @@ corrections, independent verification and acceptance retain their ordinary rules
 Use optional `record-interface` and `revise-interface` guidance for a meaningful internal software boundary or connection to an external device, service or person. ICDs record both endpoint responsibilities, representation and units, failure behavior, compatibility and assumptions. EXP criteria, prototype TRY and formal REQ records can link to exact ICD revisions with `uses-interface`. Independent verification exports the necessary interfaces selected by its EXP or REQ targets. Record the ICD before selecting it. If it is recorded after framing, use optional `amend-experiment` before the first TRY, then export the amended EXP context for independent verification. A revised ICD changes no existing selection; explicit adoption creates a new criterion context. After a TRY exists, use the normal observation or feedback revision route.
 
 Requirements state the necessary obligations. An ICD may also describe provisional choices. Review context includes the exact ICDs referenced by its requirement graph. A new ICD revision preserves prior uses and evidence; adopting it in accepted scope follows the normal requirement change, verification and acceptance route. Lifecycle revision identity is distinct from a wire protocol version.
+
+## Adopt a compatible package update
+
+Installing a newer kernel leaves this product's selected package unchanged. Read the installed kernel version and its notes before changing the executable:
+
+```sh
+mdlm --version
+mdlm release-notes
+```
+
+This guidance-only2.5.24 target supports explicit adoption from mdlm-iterative@2.5.23 when the kernel validates unchanged contracts and capabilities and validates existing data against the target schemas. The historical minimum_kernel field is descriptive metadata, not proof of compatibility. The concrete tested kernel identity belongs in release qualification evidence.
+
+From the existing lifecycle repository, inspect the exact independently installed target and save the full preview before adopting it:
+
+```sh
+mdlm upgrade preview /absolute/path/to/mdlm-process-package/iterative --json > /tmp/mdlm-upgrade-preview.json
+mdlm upgrade apply /tmp/mdlm-upgrade-preview.json unique-upgrade-operation --json
+mdlm upgrade settlement unique-upgrade-operation --json
+mdlm expectations --json
+```
+
+Read the preview's release notes and before/after expectations. Apply only the intended compatible update, preserving the returned transaction result. Use settlement for an uncertain result before further work. A changed repository or target requires a new preview.
+
+The upgrade retains original package copies, immutable lifecycle data and historical reviews. Target expectations determine current work; package version changes alone do not require blanket reverification. This target adds no lifecycle obligation, so a completed accepted product should stay at its truthful boundary. If another target introduces work, follow its eligible actions and normal stakeholder and independent-review authority.
