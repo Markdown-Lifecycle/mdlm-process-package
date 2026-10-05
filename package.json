@@ -1,0 +1,15 @@
+{
+  "name": "mdlm-process-package",
+  "version": "2.5.23",
+  "private": true,
+  "description": "Declarative MDLM Process Packages, released independently of the kernel",
+  "files": [
+    "catalog.json",
+    "process",
+    "exploratory",
+    "iterative",
+    "RELEASE-NOTES.md",
+    "PROVENANCE.json"
+  ],
+  "type": "module"
+}

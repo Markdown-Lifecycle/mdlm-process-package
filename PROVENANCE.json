@@ -1,0 +1,10 @@
+{
+  "sourceRepository": "https://github.com/taylorrowser/mdlm",
+  "sourceCommit": "b3a60cbb6e5d1837b47dbf6af7c9afd602cee436",
+  "extraction": "Exact byte-preserving import; original history retained in source repository",
+  "paths": {
+    "process": ".lifecycle/process",
+    "exploratory": ".lifecycle/exploratory",
+    "iterative": ".lifecycle/iterative"
+  }
+}
