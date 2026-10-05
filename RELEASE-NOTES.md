@@ -1,3 +1,20 @@
+# 2.5.29 — Useful nested requirement refinement
+
+Authoring and independent review guidance now permits system-to-system refinement
+for distinct subsystem responsibilities or integration claims, and same-component
+low-level-to-low-level refinement for necessary decisions left open by the parent.
+Each child must contribute meaningful behavior and each immediate group must
+collectively fulfill its parent. Repeated obligations, reversed abstraction and
+cross-component allocated refinement remain invalid; no fixed tier count is required.
+
+This is a compatible guidance-only update from 2.5.27: schemas, kernel capabilities,
+lifecycle obligations and historical records are unchanged. Existing sound graphs
+do not need rewriting or blanket reverification. Future authored or revised graphs
+receive the selected guidance through normal independent review. Read the upgrade
+preview before explicit adoption; installing a kernel does not select this target.
+Installed qualification and larger-product operation remain pending. The separate,
+unmerged 2.5.28 first-use experiment is not included or promoted by this release.
+
 # 2.5.25
 
 Corrects an observed compatible-upgrade defect in 2.5.24. A real accepted-product copy retained 94 valid historical datums after adopting2.5.24, but formal maintenance actions disappeared because its package validity state rejected a different historical process reference. Do not use 2.5.24 as the supported adoption target.

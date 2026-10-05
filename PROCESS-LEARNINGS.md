@@ -15,3 +15,9 @@ Check ordinary expectations discovery, rejected author authority, exact same-sub
 ## Recovery review uses the same normative standards, issue1066
 
 Defect class: a recovery prompt omitted skills declared by the ordinary content review, so a fresh independent reviewer required an orchestrator supplement. Recovery changes the judgment route, not its quality standards. Declare the same applicable normative skills and apply them to the complete selected graph. Check the normal resolved review context contains the ordinary skill references and actual content, without a supplementary handoff.
+
+## Useful depth agrees with supported refinement, issue1068
+
+Defect class: authoring parent-role restrictions contradicted the supported useful-depth contract. Permit nested system integration responsibilities and same-component low-level decisions without inventing tiers or fields. Each child contributes a distinct obligation, every immediate group retains collective parent adequacy, and allocated refinement neither crosses components nor reverses abstraction.
+
+Check one rooted graph with system-to-system and same-component low-level-to-low-level links through the existing graph interface, package loading and the exact resolved skill bindings. Independent content review must distinguish useful decisions from repeated obligations and cross-component allocation; structural acceptance alone is not a content verdict.

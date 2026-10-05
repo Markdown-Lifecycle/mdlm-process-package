@@ -1,6 +1,6 @@
 ---
 id: typed-requirements
-version: 19
+version: 20
 ---
 
 # Author one normal-link requirement graph
@@ -85,13 +85,17 @@ contracts may justify them. Tags never require extra decomposition. Use the
 component's role name from its ICDs, never a file. `system` states behavior at the
 product boundary or an integration claim across components; it is not allocated to
 one component and may name component roles when stating their relationship. Its
-parents are stakeholder REQs. `high-level` states one component's behavior against
+parents are stakeholder or system REQs. A system child must add a distinct
+product/subsystem responsibility or integration claim; it does not allocate that
+claim to one component. `high-level` states one component's behavior against
 its ICD clauses and owned state and names no language, library, file or
 interpreter; its parents are stakeholder, system or same-component high-level REQs.
 `low-level` settles a necessary calculation, validation rule, state transition or
 justified realization constraint inside one component that its high-level
-requirement leaves open; its parents are same-component high-level REQs or a
-stakeholder constraint. Only low-level software REQs may prescribe implementation
+or low-level requirement leaves open; its parents are same-component high-level
+or low-level REQs or a stakeholder constraint. When parent and child are
+component-allocated, refinement keeps the same component. Never move from
+low-level detail back to a broader high-level or system claim. Only low-level software REQs may prescribe implementation
 technology. When a high-level REQ is decomposed, its children together keep its
 complete functional duty; a mechanism constraint is additional to that duty, never
 a substitute for it. For example, an admission duty may be refined into one child
@@ -117,6 +121,19 @@ group can be useful when it adds that information. Shared rules remain shared
 requirements. The source-free verification export includes the full REQ rationale
 and selected ICDs, so author it without implementation excerpts or product-authored
 expectations.
+
+For example, a product-level system duty for truthful reservation outcomes may
+have a system child owning consistent availability across the API and expiration
+worker. It adds a subsystem integration claim; API, UI and worker high-level REQs
+then allocate their component duties. Within the API, a low-level admission
+transition may have a low-level child settling the necessary durable decision
+boundary that the parent leaves open. State the required decision, not an
+unjustified storage technology. In each group, the complete immediate children
+must still jointly deliver their parent; the example names contributions, not a
+complete decomposition. A child repeating "truthful reservation outcomes" adds
+nothing. A worker low-level child under an API low-level parent violates component
+allocation; use the owning system integration claim to relate those components.
+Do not add these levels when the parent and its contracts already settle the duty.
 
 Revise an architecture note through the normal owning REQ revision and applicable
 review/change route. Assess affected allocations and contracts explicitly; prior
