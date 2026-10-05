@@ -1,6 +1,6 @@
 kind: process-package-manifest
 id: mdlm-iterative
-version: 2.5.23
+version: 2.5.24
 status: experimental
 description: Explore a useful product, then progressively baseline necessary behavior.
 kernel_contract:
@@ -49,7 +49,7 @@ compatibility:
   unknown_definition_fields: reject
   arbitrary_code_execution: forbidden
   template_inheritance: single-parent-additive
-  repository_migration: fresh-only
+  repository_migration: compatible
 provenance:
   companion_reference: .lifecycle/iterative/README.md
   intent: useful-product-to-justified-baseline
