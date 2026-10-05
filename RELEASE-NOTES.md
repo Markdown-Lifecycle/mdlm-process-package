@@ -1,3 +1,11 @@
+# 2.5.28 — EXPERIMENTAL OPT-IN, unmerged candidate
+
+Adds a first operational-use evidence duty only for current accepted IMPs without a valid authenticated OPU. It preserves previous acceptance and verification, introduces no new product behavior requirement, and retains optional repeat use. Honest observed/problem/inconclusive records satisfy the duty. Formal profile completion waits for that account; closed exploration remains unchanged.
+
+The package is a deliberately selected experimental profile, not a universal/default policy. Kernel0.1.1 and existing contracts/types/capabilities are reused; current products keep their selected package until explicit compatible preview/apply. Review the exact added required action in preview before adoption. No existing product has adopted this candidate and no real operational-use demonstration has completed. Required publication does not authenticate external actor/time/execution truth; preserve actual evidence and limitations.
+
+The loader does not support prerelease manifest versions, so2.5.28 is held on an unmerged experimental branch rather than changing kernel/schema rules. Tiny/exploratory bytes stay unchanged.
+
 # 2.5.25
 
 Corrects an observed compatible-upgrade defect in 2.5.24. A real accepted-product copy retained 94 valid historical datums after adopting2.5.24, but formal maintenance actions disappeared because its package validity state rejected a different historical process reference. Do not use 2.5.24 as the supported adoption target.

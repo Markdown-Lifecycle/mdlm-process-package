@@ -1,3 +1,9 @@
+# Experimental opt-in first accepted use profile (2.5.28)
+
+This unmerged experimental package adds one required operational-use account for a current accepted implementation lacking an authentic OPU. Prior acceptance, verification and product behavior stay unchanged. Historical and unaccepted products do not acquire this duty; an existing valid account satisfies it, and optional repeated use remains available. Problems and inconclusive outcomes are useful honest accounts, not reasons to fabricate success.
+
+Preview this target before explicit adoption. Installing a kernel does not change product selection. This experiment is not the universal/default profile. The existing OPU account authenticates publication, not actor/time/external execution claims. Follow installed first-use guidance and preserve actual transcript evidence.
+
 # Iterative Process Package
 
 `mdlm init /path/to/lifecycle --process iterative` starts a fresh repository with the bundled `mdlm-iterative` package. It combines the existing exploratory and formal routes. Existing tiny and exploratory products retain their selected package bytes and history.

@@ -1,0 +1,19 @@
+kind: action-definition
+id: record-first-accepted-use
+version: 1
+description: Record the first distinct operational session of a current accepted implementation in this opt-in profile
+capability: feedback
+prompt_ref: prompts/record-first-accepted-use.md@1
+types: [OPU]
+subjects: select("accepted-products-needing-use@1", {})
+inputs:
+  product: subject
+  prior_uses: 'select("operational-uses-for@1", {product: subject})'
+optional: false
+priority: 100
+links:
+  OPU:
+    observes: product
+fixed_payload:
+  OPU:
+    publication: recorded
