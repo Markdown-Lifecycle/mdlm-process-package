@@ -1,9 +1,9 @@
 kind: action-definition
 id: correct-requirements-review
-version: 1
+version: 2
 description: Independently correct an acknowledged error in the current failed requirements judgment
 capability: review
-prompt_ref: prompts/correct-requirements-review.md@1
+prompt_ref: prompts/correct-requirements-review.md@2
 types: [REV]
 subjects: select("current-requirements@1", {})
 inputs:

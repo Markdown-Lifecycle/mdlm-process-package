@@ -11,3 +11,7 @@ Check the complete expectations result, including optional action, subject, inpu
 Defect class: a mistaken correction allocation in a frozen review can block the author's sound correction. Publish a new independently registered judgment for the same current unaccepted requirement set, linked to the failed judgment with an explicit correction reason. Preserve the original review and its evidence. Every current-judgment consumer must omit explicitly superseded judgments, while historical context still includes them. Recovery changes judgment, never stakeholder scope.
 
 Check ordinary expectations discovery, rejected author authority, exact same-subject supersession, corrected group and child frontier, normal subsequent correction and unchanged original FAIL.
+
+## Recovery review uses the same normative standards, issue1066
+
+Defect class: a recovery prompt omitted skills declared by the ordinary content review, so a fresh independent reviewer required an orchestrator supplement. Recovery changes the judgment route, not its quality standards. Declare the same applicable normative skills and apply them to the complete selected graph. Check the normal resolved review context contains the ordinary skill references and actual content, without a supplementary handoff.
