@@ -65,8 +65,11 @@ evidence reference and limitations. These are authored accounts, not kernel-atte
 execution. Repeated use needs neither a new source revision nor a canonical receipt.
 The linked IMP identifies the full source even when its formal scope is narrower;
 operating provisional behavior does not accept it. OPU does not require stakeholder
-feedback or change the formal completion conditions. OBS and RES retain their
-separate execution-assessment contracts.
+feedback or replace acceptance. In this experimental opt-in profile,
+`record-first-accepted-use` requires one authentic OPU for a current accepted IMP
+that lacks one before the formal boundary is reached. Repeated use through
+`record-operational-use` remains optional. OBS and RES retain their separate
+execution-assessment contracts.
 
 ## Correcting a prototype
 
@@ -110,7 +113,7 @@ mdlm --version
 mdlm release-notes
 ```
 
-This compatible2.5.25 target supports explicit adoption from mdlm-iterative@2.5.23 when the kernel validates unchanged contracts and capabilities and validates existing data against the target schemas. The historical minimum_kernel field is descriptive metadata, not proof of compatibility. The concrete tested kernel identity belongs in release qualification evidence.
+The earlier guidance-only 2.5.25 target supported explicit adoption from mdlm-iterative@2.5.23 with unchanged contracts and capabilities. For the selected target, the kernel checks supported compatibility and validates existing data against its schemas. The historical minimum_kernel field is descriptive metadata, not proof of compatibility. The concrete tested kernel identity belongs in release qualification evidence.
 
 From the existing lifecycle repository, inspect the exact independently installed target and save the full preview before adopting it:
 
@@ -123,7 +126,7 @@ mdlm expectations --json
 
 Read the preview's release notes and before/after expectations. Apply only the intended compatible update, preserving the returned transaction result. Use settlement for an uncertain result before further work. A changed repository or target requires a new preview.
 
-The upgrade retains original package copies, immutable lifecycle data and historical reviews. Target expectations determine current work; package version changes alone do not require blanket reverification. This target adds no lifecycle obligation, so a completed accepted product should stay at its truthful boundary. If another target introduces work, follow its eligible actions and normal stakeholder and independent-review authority.
+The upgrade retains original package copies, immutable lifecycle data and historical reviews. Target expectations determine current work; package version changes alone do not require blanket reverification. Unlike the earlier obligation-free 2.5.25 target, this experimental 2.5.28 profile requires a first accepted-use account when the current accepted IMP lacks one. Preserve its acceptance and follow the required action's guidance to record actual use honestly; further use remains optional. Follow normal stakeholder and independent-review authority for any other eligible work.
 
 ## Historical applicability after compatible adoption
 
