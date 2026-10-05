@@ -9,7 +9,7 @@ types:
 subjects: select("current-changes@1", {})
 inputs:
   subject: subject
-when: '!(exists("reviews-for@1", {subject: subject})) && (none("reviews-for@1", {subject: subject}))'
+when: '!(exists("reviews-for@2", {subject: subject})) && (none("reviews-for@2", {subject: subject}))'
 priority: 110
 links:
   REV:

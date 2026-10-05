@@ -1,6 +1,6 @@
 kind: selector-definition
 id: reviews-for
-version: 1
+version: 2
 description: reviews for
 parameters:
 - name: subject
@@ -15,7 +15,8 @@ query:
     types:
     - REV
   as: item
-  where: state(item, "validity") == "valid" && item.integrity.transaction_valid == true
+  where: >-
+    state(item, "validity") == "valid" && item.integrity.transaction_valid == true && none("superseding-reviews@1", {review: item})
   distinct: true
   order_by:
   - identity.revision_id

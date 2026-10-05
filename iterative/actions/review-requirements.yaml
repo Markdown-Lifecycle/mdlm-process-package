@@ -10,7 +10,7 @@ subjects: select("current-requirements@1", {})
 inputs:
   interfaces: 'select("selected-interfaces@1", {requirements: subject})'
   subject: subject
-when: '!(exists("reviews-for@1", {subject: subject})) && none("reusable-requirements-review@1", {requirements: subject})'
+when: '!(exists("reviews-for@2", {subject: subject})) && none("reusable-requirements-review@1", {requirements: subject})'
 priority: 100
 links:
   REV:

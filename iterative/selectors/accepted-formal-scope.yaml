@@ -13,11 +13,11 @@ query:
   where: 'none("newer-revisions@1", {subject: item}) && (exists("current-requirements@1", {}) && every("current-requirements@1",
     {}, req => exists("implementations-for@1", {requirements: req}) && every("implementations-for@1", {requirements:
     req}, imp => exists("acceptances-for@2", {implementation: imp}) && exists("selected-verification-activities@1",
-    {product: imp}) && every("selected-verification-activities@1", {product: imp}, activity => exists("pass-reviews@1",
-    {subject: activity}) && none("fail-reviews@1", {subject: activity}) && exists("passing-activity-results@1",
-    {activity: activity, product: imp})) && exists("pass-reviews@1", {subject: imp}) && none("fail-reviews@1", {subject:
-    imp}))) && every("current-requirements@1", {}, req => (exists("pass-reviews@1", {subject: req}) || exists("reusable-requirements-review@1",
-    {requirements: req})) && none("fail-reviews@1", {subject: req}))) && every("current-changes@1", {}, change =>
+    {product: imp}) && every("selected-verification-activities@1", {product: imp}, activity => exists("pass-reviews@2",
+    {subject: activity}) && none("fail-reviews@2", {subject: activity}) && exists("passing-activity-results@1",
+    {activity: activity, product: imp})) && exists("pass-reviews@2", {subject: imp}) && none("fail-reviews@2", {subject:
+    imp}))) && every("current-requirements@1", {}, req => (exists("pass-reviews@2", {subject: req}) || exists("reusable-requirements-review@1",
+    {requirements: req})) && none("fail-reviews@2", {subject: req}))) && every("current-changes@1", {}, change =>
     exists("sets-for-change@1", {change: change}))'
   distinct: true
   order_by:

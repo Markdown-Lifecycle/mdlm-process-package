@@ -9,8 +9,8 @@ types:
 subjects: select("current-requirements@1", {})
 inputs:
   requirements: subject
-when: '!(exists("implementations-for@1", {requirements: subject})) && (exists("pass-reviews@1", {subject:
-  subject}) && none("fail-reviews@1", {subject: subject}) && none("prior-implementations-for@1", {requirements:
+when: '!(exists("implementations-for@1", {requirements: subject})) && (exists("pass-reviews@2", {subject:
+  subject}) && none("fail-reviews@2", {subject: subject}) && none("prior-implementations-for@1", {requirements:
   subject}))'
 priority: 100
 links:
