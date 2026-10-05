@@ -1,0 +1,14 @@
+kind: selector-definition
+id: accepted-products-needing-use
+version: 1
+description: Current accepted implementations without an authentic recorded operational-use account
+parameters: []
+result_kind: revision
+query:
+  from:
+    collection: revisions
+    types: [IMP]
+  as: item
+  where: 'state(item, "validity") == "valid" && none("newer-revisions@1", {subject: item}) && exists("requirements-for@1", {implementation: item}) && exists("acceptances-for@2", {implementation: item}) && every("operational-uses-for@1", {product: item}, use => state(use, "validity") != "valid" || use.integrity.transaction_valid != true)'
+  distinct: true
+  order_by: [identity.revision_id]
