@@ -31,3 +31,7 @@ Install an exact private Git commit with npm, or install the packed data tarball
 ## 2.5.26
 
 Requires the kernel review-correction@1 service, introduced in kernel0.1.1. Older kernels reject this package. Compatible upgrade adds this service without rebinding existing capabilities or rewriting lifecycle history. A current unaccepted failed requirements review now offers an independently registered corrected judgment, preserving the original failure and correction reason.
+
+## 2.5.27
+
+The requirements-review recovery context now includes the same product-quality and typed-requirements standards as ordinary requirements review. Fresh independent reviewers receive these selected-package skill contents normally, without an orchestrator supplement. Recovery authority, eligibility, scope and history rules are unchanged. Existing2.5.26 products keep their selected package until a separately authorized compatible upgrade.
