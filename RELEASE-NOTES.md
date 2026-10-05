@@ -1,3 +1,13 @@
+# 2.5.25
+
+Corrects an observed compatible-upgrade defect in 2.5.24. A real accepted-product copy retained 94 valid historical datums after adopting2.5.24, but formal maintenance actions disappeared because its package validity state rejected a different historical process reference. Do not use 2.5.24 as the supported adoption target.
+
+Iterative 2.5.25 validity@2 accepts authentic preserved historical applicability, while retaining parse/schema/identity/reference/hash checks and rejecting unauthenticated publication transactions. No provenance or historical review is rewritten. Earlier PASS evidence does not automatically satisfy new obligations; target expectations still own current work. Tiny/exploratory remain byte-for-byte unchanged.
+
+This target introduces no artificial obligation. Exact kernel 0.1.0 source 5c2938b30fd1e3d830421393f881bff1acdda129 is already qualified. Focused applicability checks passed on a disposable copy with 94 authenticated historical datums: complete required and optional work remains equal to 2.5.23, and invalid transaction evidence still fails validity. Subsequent exact-target qualification remains pending. Existing2.5.23 and2.5.24 authoring package copies remain preserved. Compatibility still requires same family, unchanged contracts/capabilities and schemas accepting existing data, with no schema transformation.
+
+Preview before adoption using `mdlm upgrade preview /absolute/target/iterative --json`, inspect notes and full required/optional expectations, then apply a saved preview with `mdlm upgrade apply preview.json unique-operation --json`. Use `mdlm upgrade settlement unique-operation --json` for uncertain results.
+
 # 2.5.24
 
 This distribution changes only the iterative package to mdlm-iterative@2.5.24. Its manifest now permits explicit compatible adoption, and its README explains preview/apply/settlement. Types, actions, selectors, prompts, contracts and kernel capability bindings are unchanged. Tiny1.0.1 and exploratory1.0.0 retain exact bytes and digests.
