@@ -1,9 +1,9 @@
 ---
 id: revise-requirements
-version: 31
+version: 32
 skills:
 - skills/product-quality.md@8
-- skills/typed-requirements.md@20
+- skills/typed-requirements.md@21
 - skills/source-trace.md@9
 ---
 

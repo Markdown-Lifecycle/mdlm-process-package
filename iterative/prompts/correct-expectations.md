@@ -1,9 +1,9 @@
 ---
 id: correct-expectations
-version: 23
+version: 24
 skills:
 - skills/product-quality.md@8
-- skills/typed-requirements.md@20
+- skills/typed-requirements.md@21
 ---
 
 # Correct a wrong acceptance expectation

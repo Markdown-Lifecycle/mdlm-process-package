@@ -1,19 +1,34 @@
-# 2.5.29 — Useful nested requirement refinement
+# 2.5.29: System allocation and useful software refinement
 
-Authoring and independent review guidance now permits system-to-system refinement
-for distinct subsystem responsibilities or integration claims, and same-component
-low-level-to-low-level refinement for necessary decisions left open by the parent.
-Each child must contribute meaningful behavior and each immediate group must
-collectively fulfill its parent. Repeated obligations, reversed abstraction and
-cross-component allocated refinement remain invalid; no fixed tier count is required.
+Authoring and independent review guidance now distinguishes system decomposition,
+allocation to one or many elements, and software-item/internal-part refinement.
+System duties may be allocated to a single element or jointly. Existing rationale
+records boundaries and contributions; every required behavior remains in EARS,
+statements or explicitly incorporated ICD clauses. The existing `component` field
+names software responsibility scope, not system allocation. Separate processes do
+not automatically determine HLR/LLR classification.
 
-This is a compatible guidance-only update from 2.5.27: schemas, kernel capabilities,
-lifecycle obligations and historical records are unchanged. Existing sound graphs
-do not need rewriting or blanket reverification. Future authored or revised graphs
-receive the selected guidance through normal independent review. Read the upgrade
-preview before explicit adoption; installing a kernel does not select this target.
-Installed qualification and larger-product operation remain pending. The separate,
-unmerged 2.5.28 first-use experiment is not included or promoted by this release.
+Concise intention/architecture notes stay in the owning REQ rationale; useful longer
+descriptive notes may use that exact REQ body and its current source-free export.
+Notes supplement rather than replace normative duties; external document links
+are not automatically retrieved or reviewed.
+
+Useful nested system, HLR and LLR refinement is permitted when it adds necessary
+behavior or decisions. Immediate children must jointly deliver their parent,
+including integration and progress; repeated tiers and unexplained scope changes
+remain defects. Fully settled allocated system duties need no duplicate HLR, while
+broad leaves cannot hide unfinished software contracts.
+
+This compatible guidance-only candidate from 2.5.27 changes no schema, kernel
+capability or lifecycle obligation. Historical records and field values retain
+their original meaning; sound graphs need no cosmetic migration or blanket
+reverification. Future authored/revised graphs receive the new guidance through
+normal independent review. Changed behavior or allocation still needs appropriate
+change authority. Read the exact upgrade preview before explicit adoption;
+installing a kernel does not select this target. No machine allocation query or
+standards-compliance claim is introduced. Installed qualification and larger-demo
+operation remain pending. The separate unmerged 2.5.28 first-use experiment is not
+included or promoted by this candidate.
 
 # 2.5.25
 
