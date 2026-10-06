@@ -11,7 +11,7 @@ child sufficiency. Useful depth follows necessary behavior, without a tier quota
 This versions the independently reviewed content from
 fb3c2944da729e46ecdabc7455f97bf1bb5cc982 on package source
 07d8f2fd7969562e51d206f21cc046cc3b61b3dd. The shared typed-requirements skill advances
-from 22 to 23; its twelve consuming prompts and corresponding actions advance
+from 22 to 23; its twelve consuming prompts and thirteen actions advance
 with matching references. Schemas, kernel capabilities, lifecycle obligations,
 tiny and exploratory packages remain unchanged.
 
