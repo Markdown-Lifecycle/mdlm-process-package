@@ -22,8 +22,10 @@ existing change and correction routes.
 Authors and reviewers use the checklists in `skills/product-quality.md`. Each REQ
 states one obligation. Equations, decision tables and state transitions can settle
 required behavior; copying code into prose cannot justify it. `skills/typed-requirements.md`
-explains variable system/software depth and the initial architecture/depth note in
-an owning REQ rationale. The requirement graph supports shared children and uneven
+compares expected specificity at each level, distinguishes system allocation from
+software refinement, and locates supplementary architecture notes in an owning
+REQ. Its worked API/browser slice and decomposition checklist apply to authors
+and reviewers. The requirement graph supports shared children and uneven
 depth without extra review transactions or fixed tiers. Multi-component products
 may tag software REQs with optional `level` and `component` fields, as
 types/REQ.yaml and typed-requirements describe. This representation keeps

@@ -38,6 +38,27 @@ it, including required progress when no external event arrives. Try a case where
 every selected child holds but its parent fails; close gaps by reusing existing
 shared requirements where applicable. Keep permitted implementation choices open.
 
+## Choose the boundary and specificity
+
+Use the boundary and the claim to choose a level. "Component" alone does not
+identify a requirement level. An API service can be a system element with allocated
+system requirements and a software item with HLRs and LLRs. An internal software
+component can have software requirements within that item's architecture.
+
+| Role | Question and expected specificity | Verification boundary |
+| --- | --- | --- |
+| Stakeholder | What outcome or imposed constraint does someone need, in what operational context? State one assessable need with its necessary success conditions; separate independent needs. | Stakeholder scenario and intended use. |
+| System, subsystem or allocated element | What observable duty must this bounded system perform? Settle required interactions, conditions, owned state, external results and applicable performance or failure bounds. Allocate the duty to one or more elements and explain their contributions. | The named system boundary, including integrated interactions for joint duties. |
+| Software high-level | What behavior must this specified software item provide to meet its allocated duties? Define operations, input/output meaning, modes, state transitions and required error outcomes against its contracts. Software architecture explains how internal responsibilities support these behaviors. | The software item's declared contract; integrated evidence for interactions it promises. |
+| Software low-level | Which necessary rules remain to implement that behavior without guessing? Settle exact domains, equations, units, boundary cases, transition decisions, ordering or justified realization constraints. Preserve language and algorithm choice wherever the required result does not depend on them. | The precise declared behavioral contract; independent component tests can fit, with integration evidence retained for parent claims. |
+
+Allocation assigns responsibility. Decomposition refines the required behavior
+or identifies necessary contributions to a parent outcome. A label or allocation
+list does not establish that the contributions are sufficient. Use as many system
+or software refinement levels as add a meaningful contract. Stop when all required
+behavior is settled; the table is not a mandatory sequence or minimum tier count.
+The package representation and stopping rule are detailed in [Settle useful depth](#settle-useful-depth).
+
 ## Record architecture and chosen depth
 
 For each meaningful system boundary, designate one owning REQ and put the
@@ -61,6 +82,10 @@ in one place. The RQS/DCP graph selects the exact obligations and `uses-interfac
 selects applicable exact ICDs. Record a meaningful contract, not every helper.
 
 ### Supporting architecture and intention notes
+
+Record the boundary and depth decision when first formalizing a system and revisit
+it when a change affects responsibility, interfaces or necessary detail. There is
+no separate mandatory document between every pair of levels.
 
 Keep the concise boundary, intention, allocation and depth summary in the owning
 REQ's `rationale`. When useful explanation needs diagrams, alternatives, decision
@@ -171,12 +196,14 @@ including any prescribed language or runtime; it retains every other exact
 revision at every level, including language-neutral low-level behavior. Retained
 requirements still need fresh verification against the new product commit. Levels are not a fixed tier count: add a refinement only where
 it settles a necessary decision, refines a responsibility or expresses an integration claim.
-Stop when a reader can derive the
-required inputs, outputs, state changes and relevant failures from the leaf and
-its exact applicable contracts; remaining choices must be permitted implementation
-variation. Another level must settle a necessary decision, refine a meaningful responsibility
-or express an integration claim. Restating the parent, splitting a formula into
-branches or following helper functions does not justify more depth. A singleton
+Stop when a reader can derive the required inputs, outputs, state changes and
+relevant failures from the leaves and their exact applicable contracts, including
+each trigger, operating condition and required bound. Two implementations in
+different languages must agree on every constrained result for the selected formal
+scope. Internal structure, algorithms and presentation choices may differ where
+the contract permits. A complete slice does not establish that the whole product
+has been specified. Restating the parent, splitting a formula into branches or
+following helper functions does not justify more depth. A singleton
 group can be useful when it adds that information. Shared rules remain shared
 requirements. The source-free verification export includes the full REQ rationale
 and selected ICDs, so author it without implementation excerpts or product-authored
@@ -197,20 +224,31 @@ content or exact incorporated ICD clauses; the allocation column belongs in rati
 | SYS-VISIBLE, product system | After an active hold's deadline passes, the product shall present that item as available within delta under the agreed operating conditions. | Joint UI/service allocation. UI presents the authoritative result; service supplies it. This adds the observable outcome and timing boundary. |
 | SYS-LIFECYCLE, subsystem system | After that deadline, the reservation service shall publish authoritative available state within its allocated part of delta. | Joint API/worker allocation. This settles the subsystem outcome; the UI propagation contribution must complete the parent interval. |
 | SYS-EXPIRE, allocated system | On a conforming expiration request for an overdue active hold, the API shall release that item's authoritative reservation state as defined by the expiry ICD clause. | Allocated to the API element. The worker has a separate necessary initiation duty. This adds the element's required interaction and owned-state responsibility. |
+| SYS-DISPLAY, allocated system | After authoritative available state is published, an already-open healthy browser shall present that state for the same item within the UI's allocated part of delta. | Allocated to the browser element; the exact health and workload conditions bound this duty. |
 | HLR-EXPIRE, software high-level | On Expire(r,t), the reservation software item shall change active r to expired exactly when its recorded deadline is at most t, leaving future and non-active reservations unchanged. | Software item reservation-api. This refines the allocated contract into its decision/state cases; exact ICD clauses supply input identity, response and refusal rules. |
+| HLR-DISPLAY, software high-level | On an availability reply, the browser software shall update the selected item's displayed availability according to the reply-association and display mapping contract. | Software item reservation-browser. The contract settles matching replies, stale replies and visible state meaning; it leaves the UI framework open. |
+| LLR-REPLY, software low-level | A reply for an item other than the currently selected item shall leave the displayed selected-item availability unchanged. | Reservation-browser scope. This settles the late-reply case after the user changes selection, supporting the same-item obligation. Reply identity comes from the exact ICD. |
 | LLR-DECISION, software low-level | Expiry eligibility and its state update shall use one item's latest committed state in the same serialized decision order as other admitted changes to that item. | Reservation-api scope. This settles the necessary shared-state decision rule when the approved concurrency contract leaves it open. It names no lock, language, file or storage library. |
 
-Every row needs its exact parent links and any shared obligations, not merely this
-illustrative label. A complete SYS-LIFECYCLE group must include the worker's timely
-initiation and the API's transition/publication contributions. A complete SYS-VISIBLE
-group also needs the UI's correlated authoritative display contribution and their
-combined timing. The API admission system duty is separately allocated to the API:
+These are example contributions, not a complete graph. SYS-VISIBLE has
+SYS-LIFECYCLE and SYS-DISPLAY as immediate contributions. SYS-LIFECYCLE needs
+SYS-EXPIRE and the worker initiation contribution. SYS-EXPIRE refines through
+HLR-EXPIRE; its leaf group needs the functional transition as well as the separate
+LLR-DECISION concurrency rule. SYS-DISPLAY needs acquisition/progress as well as
+HLR-DISPLAY. LLR-REPLY handles only one case in HLR-DISPLAY's complete leaf group;
+it cannot replace the rendering obligation, mapping or required error cases.
+Every row needs its exact parent links and shared obligations. The combined
+service and UI timing must fit the parent interval. The API admission system duty
+is separately allocated to the API:
 reserve an eligible available item exclusively for its borrower until the approved
 deadline. Its HLR settles the available-to-held and refusal/no-change cases; an LLR
 can settle deadline t + D when approved duration D and time origin require that
 calculation. Retain a parent/ICD that already settles it rather than copying it.
 These admission contributions remain distinct from expiry, and neither branch
-alone establishes the complete reservation lifecycle.
+alone establishes the complete reservation lifecycle. A complete browser branch
+also settles relevant interaction behavior, such as what the user can select and
+what remains displayed during acquisition or failure. Scope and stakeholder intent
+decide those obligations; an API response schema cannot supply them implicitly.
 
 For the expiry group, suppose a child only requires the worker to send a correct
 request when invoked, and another requires the API to expire the named overdue
@@ -248,9 +286,14 @@ For corrections and approved changes, inspect the exact prior review and approve
 
 ## Check the refinement
 
-Authors and reviewers use the existing requirement rationale and exact group
-assessment fields for these judgments, without a separate proof artifact:
+Authors apply this checklist to the final selected graph before submission;
+reviewers apply it independently in context. Use existing requirement rationale,
+set-level findings and exact group assessment fields, without a separate proof artifact:
 
+- Check whole-intent coverage first: each desired behavior in the originating
+  stakeholder scope has a normative owner in the selected graph. Explicitly
+  account for scope exclusions and authorized removals. A graph can have adequate
+  written parent/child groups yet omit a stakeholder need from every requirement.
 - Identify what each child adds to the parent: a settled decision, an allocated
   responsibility or a necessary interaction. For a derived constraint, explain its
   origin, why it is needed and which parent outcome depends on it. A derived child
@@ -290,3 +333,13 @@ prior review; a revised child triggers review of its group. No minimum number of
 edits applies.
 
 After accepted product baseline, changes require an approved CHG. Its roots and derived descendants define scope; the current frontier defines what to edit now. Unrelated revisions require amended stakeholder approval. Keep the body empty when the structured fields and concise rationale suffice. Use a body only for useful descriptive supporting notes as defined above, not repeated normative fields.
+
+## Sources for these distinctions
+
+[NASA Systems Engineering Handbook, Appendix C](https://www.nasa.gov/reference/appendix-c-how-to-write-a-good-requirement/)
+supports single-thought requirements, separate rationale, traceability and checks
+for missing requirement categories. The allocation/refinement distinction is also
+illustrated by [FAA report DOT/FAA/AR-08/32](https://www.faa.gov/sites/faa.gov/files/aircraft/air_cert/design_approvals/air_software/AR-08-32.pdf),
+section 2.10 and printed pages 61–63, which discuss system allocation and software
+HLRs/LLRs in a DO-178B context. These are sources for MDLM's guidance; following
+this package does not establish compliance with DO-178B or DO-178C.
