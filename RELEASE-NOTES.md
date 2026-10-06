@@ -1,3 +1,30 @@
+# 2.5.32: Verification allocation guidance
+
+Verification authors derive each consumer's validation assertions from its own
+requirement and exact incorporated ICD aspect. A producer computation duty alone
+does not require consumer recomputation. Producer correctness and integrated
+results remain verification targets; ambiguous allocation needs requirements
+clarification before a rejection expectation is frozen.
+
+This versions the reviewed paragraph from source
+f5f5744e32e5b3f732a0daefb14ef5618e92809a. The shared planning prompt advances to 24;
+both planning actions and verification revision advance to 21, and correction
+after review advances to 9, with matching prompt references. No schema, kernel
+capability or lifecycle obligation changes. Tiny and exploratory stay unchanged.
+
+Existing products retain their selected package and historical evidence. Before
+separately authorized adoption, inspect the exact compatible-upgrade preview and
+its required and optional expectations, then use the supported apply/settlement
+route. Kernel installation alone does not select this successor. Sound historical
+graphs need no cosmetic migration or blanket reverification.
+
+Focused source/package checks use exact kernel 0.1.1 source
+0eed478d963f62afba8424225ec1f476515af8e8. Existing 2.5.31 qualification covers only
+process be24dd8b911c14948af6c739a8a4104259e08eab and does not qualify this successor.
+Independent successor source review and exact post-merge qualification remain
+pending. This preparation does not install, migrate or upgrade a live product,
+and guidance effectiveness remains unproven until fresh operation.
+
 # 2.5.31: Source range input clarity
 
 Clarify the existing source-trace instructions: range names are unique within
