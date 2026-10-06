@@ -44,11 +44,11 @@ assert.deepEqual([...settledGraph.leaves], ['allocated-api-r00001']);
 const context = async id => buildDirectReviewContext({root, pkg: loaded.package, package: {reference: 'component-fixture', digest: 'component-fixture', language: 'mdlm-expression@1'}, snapshot: 'component-fixture', action: loaded.package.actions[id], inputs: {}, data: []});
 const contexts = await Promise.all(['draft-requirements', 'review-requirements', 'correct-requirements-review'].map(context));
 for (const result of contexts) {
-  const skill = result.prompt.skills.find(s => s.reference === 'skills/typed-requirements.md@21');
+  const skill = result.prompt.skills.find(s => s.reference === 'skills/typed-requirements.md@22');
   assert.ok(skill?.content, 'Author, ordinary and recovery reviewers resolve the new full normative skill');
 }
 const implementation = await context('implement-product');
 assert.ok(implementation.prompt.skills.some(s => s.reference === 'skills/source-trace.md@10' && s.content));
-assert.ok(implementation.prompt.skills.some(s => s.reference === 'skills/typed-requirements.md@21' && s.content));
-assert.equal(contexts[0].prompt.skills.find(s => s.reference.endsWith('typed-requirements.md@21')).content, contexts[1].prompt.skills.find(s => s.reference.endsWith('typed-requirements.md@21')).content);
+assert.ok(implementation.prompt.skills.some(s => s.reference === 'skills/typed-requirements.md@22' && s.content));
+assert.equal(contexts[0].prompt.skills.find(s => s.reference.endsWith('typed-requirements.md@22')).content, contexts[1].prompt.skills.find(s => s.reference.endsWith('typed-requirements.md@22')).content);
 console.log(JSON.stringify({ok: true, graph: {requirements: requirements.length, groups: groups.length, leaves: [...graph.leaves]}, implementationContext: {prompt: implementation.prompt.reference, skills: implementation.prompt.skills.map(s => s.reference)}, settledSystemLeaves: [...settledGraph.leaves], skills: contexts.map(c => ({action: c.action.id, prompt: c.prompt.reference, skills: c.prompt.skills.map(s => s.reference)})), limits: 'Structural graph/context check only; no native publication, independent semantic verdict, installed upgrade or runtime.'}, null, 2));

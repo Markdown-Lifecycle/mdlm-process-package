@@ -1,3 +1,18 @@
+# 2.5.30: Coherent duties incorporated from interfaces
+
+Experimental guidance successor to 2.5.29. The coherent-obligation check now
+explicitly includes the complete meaning incorporated by ICD reference. A mixed
+clause needs an unambiguous applicable aspect in normative REQ text or stable
+coherent subclauses through the normal interface route. Narrowing a citation does
+not remove other required behavior; the selected graph must retain its owners.
+
+No schema, kernel capability or lifecycle obligation changes. Sound historical
+graphs and exact evidence remain unchanged, with no cosmetic migration or blanket
+reverification. Future authored/reviewed graphs use the clarified guidance.
+Independent source review and installed compatible-upgrade qualification remain
+pending; this candidate is not selected automatically by kernel installation.
+The live 2.5.29 artifact and separate first-use experiment remain unchanged.
+
 # 2.5.29: System allocation and useful software refinement
 
 Authoring and independent review guidance now distinguishes system decomposition,

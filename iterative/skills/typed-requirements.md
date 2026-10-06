@@ -1,6 +1,6 @@
 ---
 id: typed-requirements
-version: 21
+version: 22
 ---
 
 # Author one normal-link requirement graph
@@ -92,8 +92,18 @@ appropriate change authority. Keep unaffected historical records unchanged.
 
 Each coherent obligation has an owning REQ. Its `statement` or `ears` states the
 required behavior and explicitly names any applicable stable normative ICD clause
-identifiers, with `uses-interface` selecting the exact ICD revision. For each
-operation, apply its exact incorporated clauses to the inputs that operation
+identifiers, with `uses-interface` selecting the exact ICD revision.
+
+Apply the coherent-obligation rule to the complete meaning incorporated from an
+ICD, not only the REQ's own words. If one clause mixes independently changeable
+duties, identify the exact clause and its unambiguous applicable aspect in
+statement/EARS, or revise the ICD into stable coherent subclauses through the
+normal interface route. A short reference must not silently import unrelated
+duties. Keep every required aspect owned by the selected graph's functional leaves
+or exact shared requirements; narrowing a citation does not retire the remaining
+behavior.
+
+For each operation, apply its exact incorporated clauses to the inputs that operation
 actually supplies. The clauses may own encoding, schema, ordering and compatibility
 details; keep their normative definition there rather than copying it into the REQ. Define a shared term once, in one cited interface clause or one owning requirement, and cite it elsewhere. A whole-ICD link
 alone does not identify which clauses the REQ requires. Keep unrelated capabilities
