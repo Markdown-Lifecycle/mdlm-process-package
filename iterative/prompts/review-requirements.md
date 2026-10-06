@@ -1,9 +1,9 @@
 ---
 id: review-requirements
-version: 28
+version: 31
 skills:
 - skills/product-quality.md@8
-- skills/typed-requirements.md@19
+- skills/typed-requirements.md@22
 ---
 
 # Review requirements
@@ -12,7 +12,7 @@ Apply the supplied shared product-quality skill before authoring or reviewing.
 
 The lifecycle author exports the complete exact review context and requests a fresh independent reviewer through the root. The manager authenticates and registers the returned verdict using the direct review registration command supplied in the guidance. The author submits that exact unchanged verdict using the normal submit-proposal command. Do not author your own review or replace the registration with completionEvidence. The following content judgments belong to the independent reviewer.
 
-Independently review the complete RQS and its contained requirement graph against the stakeholder request. Check that software descendants collectively fulfill their parents and that leaves give appropriate implementation and verification contracts. Apply every shared reviewer check, including one obligation, the architecture/depth decision and a requirements-only reader's ability to derive behavior. Bundling, unresolved required semantics, and unneeded or over-specified obligations are content defects, not optional editorial preferences. Judge clarity, scope, assumptions and relevant interactions. When levels are used, mark needs-change a system or high-level requirement that names a language, library, file or interpreter, a missing or wrong `component`, a low-level requirement that restates its parent, a decomposed high-level requirement whose children do not together keep its functional duty, and a child whose level or component does not fit its parent. The CLI owns structural and graph checks.
+Independently review the complete RQS and its contained requirement graph against the stakeholder request. Check that software descendants collectively fulfill their parents and that leaves give appropriate implementation and verification contracts. Apply every shared reviewer check, including one obligation, the architecture/depth decision and a requirements-only reader's ability to derive behavior. Bundling, unresolved required semantics, and unneeded or over-specified obligations are content defects, not optional editorial preferences. Judge clarity, scope, assumptions and relevant interactions. Apply typed-requirements' shared allocation/depth, supporting-note and complete-refinement checks. A system duty allocated to one element or jointly to several is valid; check that rationale names contributions and boundaries while every required behavior appears in normative content. When levels are used, mark needs-change missing or unsuitable software responsibility scopes, unjustified technology in a system/HLR, repeated obligations, reversed abstraction or unresolved scope relationships. Useful nested system/HLR/LLR refinement needs no fixed tiers. Review cross-scope contributions against the stated software-item boundary and exact ICDs, not labels-only equality. An allocated system leaf is valid only when its contract is fully settled; it cannot conceal missing meaningful refinements. Judge collective adequacy at every immediate group, including joint integration and progress when no external event arrives. The CLI owns structural and graph checks.
 
 In the exported `requirementGraphs`, use the entry whose `selection` equals the reviewed RQS revision. Populate `requirement_assessments` with exactly its `assessment.requirements` revisions, each once, and `decomposition_assessments` with exactly its `assessment.groups[].revision` values, each once. Each group's `children` rows must contain exactly its listed `assessment.groups[].children` revisions, each once. These arrays follow the exported assessment frontier while the complete graph remains review context. Record judgments of retained requirements and groups outside that frontier in `findings`, and include those judgments in the set-level outcome.
 
