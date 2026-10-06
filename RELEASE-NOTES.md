@@ -1,3 +1,14 @@
+# 2.5.31: Source range input clarity
+
+Clarify the existing source-trace instructions: range names are unique within
+each file, inclusive line ranges are disjoint, shared duties use one range
+requirements list, and split pieces have distinct descriptive names.
+
+This documents existing attribution constraints exposed by workshop input errors.
+No kernel, schema, validation tool or lifecycle gate changes. Historical records
+and qualified 2.5.30 remain unchanged. Independent review and qualification are
+pending; this source successor does not migrate any live product.
+
 # 2.5.30: Coherent duties incorporated from interfaces
 
 Experimental guidance successor to 2.5.29. The coherent-obligation check now
