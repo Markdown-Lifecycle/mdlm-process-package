@@ -1,3 +1,33 @@
+# 2.5.33: Requirement specificity and decomposition guidance
+
+Clarify system allocation versus software-item refinement and the expected
+specificity and verification boundary of stakeholder, system, software high-level
+and software low-level requirements. The existing architecture note remains
+supplementary; required duties stay in requirements or exact incorporated ICD
+clauses. The API/browser example makes each contribution and its limits explicit.
+Authors and reviewers check both whole stakeholder-intent coverage and immediate
+child sufficiency. Useful depth follows necessary behavior, without a tier quota.
+
+This versions the independently reviewed content from
+fb3c2944da729e46ecdabc7455f97bf1bb5cc982 on package source
+07d8f2fd7969562e51d206f21cc046cc3b61b3dd. The shared typed-requirements skill advances
+from 22 to 23; its twelve consuming prompts and thirteen actions advance
+with matching references. Schemas, kernel capabilities, lifecycle obligations,
+tiny and exploratory packages remain unchanged.
+
+Existing products retain their selected package and historical evidence. This
+candidate does not require cosmetic requirement reclassification or blanket
+reverification. For separately authorized adoption, inspect the exact public
+compatible-upgrade preview, including required and optional expectations, then
+use apply and settlement. Installing a kernel alone does not select this package.
+
+Focused source/package checks use installed kernel 0.1.1 at source
+0eed478d963f62afba8424225ec1f476515af8e8. They establish package loading and resolved
+author/reviewer guidance, not installed qualification, successful upgrade or
+operational effectiveness. Fresh review of the complete versioned candidate,
+exact release qualification and an explicit preserved-history upgrade remain
+separate before making those claims. No live product is upgraded by preparation.
+
 # 2.5.32: Verification allocation guidance
 
 Verification authors derive each consumer's validation assertions from its own
