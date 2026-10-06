@@ -1,10 +1,10 @@
 ---
 id: revise-requirements
-version: 34
+version: 35
 skills:
 - skills/product-quality.md@8
 - skills/typed-requirements.md@22
-- skills/source-trace.md@10
+- skills/source-trace.md@11
 ---
 
 # Revise the accepted requirement graph

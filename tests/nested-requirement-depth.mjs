@@ -48,7 +48,7 @@ for (const result of contexts) {
   assert.ok(skill?.content, 'Author, ordinary and recovery reviewers resolve the new full normative skill');
 }
 const implementation = await context('implement-product');
-assert.ok(implementation.prompt.skills.some(s => s.reference === 'skills/source-trace.md@10' && s.content));
+assert.ok(implementation.prompt.skills.some(s => s.reference === 'skills/source-trace.md@11' && s.content));
 assert.ok(implementation.prompt.skills.some(s => s.reference === 'skills/typed-requirements.md@22' && s.content));
 assert.equal(contexts[0].prompt.skills.find(s => s.reference.endsWith('typed-requirements.md@22')).content, contexts[1].prompt.skills.find(s => s.reference.endsWith('typed-requirements.md@22')).content);
 console.log(JSON.stringify({ok: true, graph: {requirements: requirements.length, groups: groups.length, leaves: [...graph.leaves]}, implementationContext: {prompt: implementation.prompt.reference, skills: implementation.prompt.skills.map(s => s.reference)}, settledSystemLeaves: [...settledGraph.leaves], skills: contexts.map(c => ({action: c.action.id, prompt: c.prompt.reference, skills: c.prompt.skills.map(s => s.reference)})), limits: 'Structural graph/context check only; no native publication, independent semantic verdict, installed upgrade or runtime.'}, null, 2));
