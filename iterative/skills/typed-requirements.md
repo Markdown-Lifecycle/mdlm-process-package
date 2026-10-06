@@ -1,6 +1,6 @@
 ---
 id: typed-requirements
-version: 22
+version: 23
 ---
 
 # Author one normal-link requirement graph
