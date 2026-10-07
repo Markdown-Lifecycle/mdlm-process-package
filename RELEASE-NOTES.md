@@ -2,6 +2,8 @@
 
 Iterative opts in to verification-applicability@1 on the existing RES type. Ordinary independent-result proposals may explicitly name evidence.historicalResult from the immediate predecessor IMP; the kernel derives optional historical_observation provenance while retaining the original completed receipt and all evidence bytes/times. Only an unchanged selection-only successor and exact retained method qualify. Current independent review and stakeholder acceptance retain their authority, and the reviewer may require fresh execution.
 
+The demonstrated adoption route is fresh initialization with this selected package. The existing unchanged-contract compatible-upgrade route rejects the added capability before mutation; no upgrade proof or implementation is included. Existing-product opt-in is tracked separately in [MDLM #1075](https://github.com/taylorrowser/mdlm/issues/1075), preserving same-package evidence restrictions without promising cross-package receipt reuse.
+
 Older kernels reject the new capability. This candidate needs a kernel implementing that contract, and existing products keep their selected package. No live adoption, execution receipt migration, cross-package reuse, longer reuse chain, source-revert support, automatic determinism or current-host-equivalence claim is included. Tiny and exploratory remain unchanged. Source checks and disposable CLI proof establish the bounded contract only; release qualification and live adoption are separate.
 
 # 2.5.34: Discriminating validation witnesses
