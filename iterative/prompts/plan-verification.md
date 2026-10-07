@@ -1,6 +1,6 @@
 ---
 id: plan-verification
-version: 25
+version: 26
 skills: []
 ---
 
@@ -14,7 +14,7 @@ Commit the verifier in a separate Git repository. Define each activity's method 
 
 Create exactly one `coverage` entry for each exact target selected by the activity's `verifies` links. Combine that target's obligations in its `obligations` array. Its `case_ids` must list every declared case whose `targets` contains that exact target, once each, with no other case IDs. Do not split one target into several coverage entries by obligation or case. A single EXP therefore has one coverage entry even when its criterion has several obligations and cases.
 
-Write shared method criteria or predecessor class reconciliation once in a named passage of the activity's objective. Each coverage rationale names the applicable passage and explains how its exact target obligations and listed cases use it, including target-specific sufficiency and remaining gaps. Keep each target's exact links, obligations and complete case_ids, frozen expectations, captured evidence and independent judgments. A common account explains shared evidence; each target still needs its own coverage argument.
+Write shared current method criteria and predecessor reconciliation once in a named passage of the activity's objective. Explicitly retain every applicable criterion, assigned inspector and evidence-sufficiency limit. Reference exact pinned predecessor revisions and supporting evidence for historical change accounts instead of prepending their full explanations. Each coverage rationale names the current passage and explains its target's obligations, cases, sufficiency and remaining gaps. Keep each target's exact links, obligations and complete case_ids, frozen expectations, captured evidence and independent judgments. Shared explanations replace repeated prose, not current criteria or target-specific coverage arguments.
 
 Before publication, check the final cases and coverage against every selected
 requirement and its incorporated normative ICD clauses, including required request

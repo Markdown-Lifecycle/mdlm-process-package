@@ -1,3 +1,20 @@
+# 2.5.36: Current verification criteria and retained history
+
+Verification authors write current shared criteria and predecessor reconciliation
+once, explicitly retaining applicable criteria, assigned inspectors and evidence
+sufficiency limits. Target coverage keeps its own obligations, cases and gaps.
+Historical change accounts remain reachable through exact pinned predecessor
+revisions and supporting evidence rather than full copied explanations.
+
+The shared planning prompt advances to 26, its three planning/revision actions
+to 23 and correction-after-review to 11. This is class 6 authoring guidance from
+Process Package issue 20. Schemas, lifecycle obligations, source-free freeze,
+independent judgment, exact evidence and review duties remain unchanged. Tiny
+and exploratory retain their exact bytes. Existing products keep their selected
+packages and published methods. This source candidate is not qualification,
+live adoption or evidence of improved authoring; fresh operation must show that
+current criteria remain complete while recursive historical prose stops growing.
+
 # 2.5.35: Explicit historical verification applicability
 
 Iterative opts in to verification-applicability@1 on the existing RES type. Ordinary independent-result proposals may explicitly name evidence.historicalResult from the immediate predecessor IMP; the kernel derives optional historical_observation provenance while retaining the original completed receipt and all evidence bytes/times. Only an unchanged selection-only successor and exact retained method qualify. Current independent review and stakeholder acceptance retain their authority, and the reviewer may require fresh execution.
