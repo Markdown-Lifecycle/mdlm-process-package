@@ -1,6 +1,6 @@
 kind: type-definition
 id: RES
-version: 2
+version: 3
 description: Verification result
 name: Verification result
 extends: titled-datum@1
@@ -32,6 +32,21 @@ payload_schema:
     receipt:
       type: string
       minLength: 1
+    historical_observation:
+      type: object
+      additionalProperties: false
+      required: [contract, original_result, original_implementation, receipt, execution_operation, started_at, finished_at, applied_at]
+      properties:
+        contract:
+          const: mdlm-verification-applicability@1
+        original_result: {type: string, minLength: 1}
+        original_implementation: {type: string, minLength: 1}
+        receipt: {type: string, pattern: '^git-blob:[a-f0-9]{40}$'}
+        execution_operation: {type: string, pattern: '^[a-zA-Z0-9-]{1,80}$'}
+        started_at: {type: string, format: date-time}
+        finished_at: {type: string, format: date-time}
+        applied_at: {type: string, format: date-time}
+      description: Historical passing observation applied to an unchanged selection-only successor; never a new execution or accepted conformance.
     assessment:
       type: string
       minLength: 1
@@ -143,3 +158,4 @@ kernel_managed_payload_paths:
 - receipt
 - case_results
 - artifacts
+- historical_observation

@@ -1,6 +1,6 @@
 ---
 id: review-implementation
-version: 37
+version: 38
 skills:
 - skills/product-quality.md@8
 - skills/typed-requirements.md@23
@@ -22,3 +22,5 @@ Collection PASS establishes only the declared executable assertions. Return pass
 When the implementation follows a requirement and a concrete counterexample shows that the rule itself fails the stakeholder outcome, include an explicit requirement_assessments needs-change row for that exact selected requirement. Name each assessed requirement once. Coverage needs-change alone identifies missing or inadequate evidence and does not authorize rewriting the requirement. A passing Review cannot carry a needs-change requirement claim. The failed Review preserves the counterexample for the existing requirement correction route; findings outside approved change scope require stakeholder scope amendment.
 
 Name any incorporated exact ICD clauses that the counterexample depends on. A stronger README or external stakeholder ruling cannot substitute for a corrected lifecycle requirement. Record an authorized departure explicitly as a departure; do not describe it as satisfying the unchanged requirement.
+
+When a result carries historical_observation, inspect its original RES and predecessor IMP, unchanged source and attribution, exact retained method, original receipt/report/streams/artifacts and execution times. Its successor links scope the current applicability claim and do not claim a new execution. The kernel authenticates recorded bindings and disqualifying attempts; you still judge every current obligation, shared assumptions, environmental relevance and freshness, including implications of changed siblings or unresolved relevant findings. Require a fresh run when the claim needs another sample or an unknown relevant runtime condition. Historical evidence transfers no earlier implementation Review, conformance or stakeholder acceptance. Return an independent current verdict over the complete selection.
