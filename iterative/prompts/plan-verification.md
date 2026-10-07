@@ -1,6 +1,6 @@
 ---
 id: plan-verification
-version: 26
+version: 27
 skills: []
 ---
 
@@ -32,7 +32,7 @@ organization and private functions.
 
 A producer's computation duty does not by itself require a consumer to recompute that value or detect violations of that producer duty. Derive each component's validation assertions from its own requirement and the exact ICD aspect it incorporates. Verify producer correctness and the integrated result under their owning targets. If the selected wording leaves that allocation ambiguous, obtain requirements clarification before freezing a rejection expectation.
 
-Choose the method per claim and state what its evidence establishes. Mechanically assert exact public numeric and protocol behavior, including required values, identities, associations, transitions and error results. Derive these expectations from the public contract. Compare public values using the contract's semantics. Preserve required structure, exact-field constraints and meaningful ordering; accept representation differences and extra fields the contract leaves open. Compare full before/after state where preservation is required. For CLI, web or API work, observe the public interaction and its result; analysis can compare those observations with an explicit model. Keep presentation choices flexible where the contract permits them.
+Choose the method per claim and state what its evidence establishes. Mechanically assert exact public numeric and protocol behavior, including required values, identities, associations, transitions and error results. Derive these expectations from the public contract. Compare public values using the contract's semantics. Preserve required structure, exact-field constraints and meaningful ordering; accept representation differences and extra fields the contract leaves open. Compare all state the contract requires to remain unchanged, including complete required record collections; an accurate changed notice or unspecified metadata may vary. For CLI, web or API work, observe the public interaction and its result; analysis can compare those observations with an explicit model. Keep presentation choices flexible where the contract permits them.
 
 Method and execution level are separate choices. A detailed software rule may use
 an independent unit or component test through a declared stable contract. When
