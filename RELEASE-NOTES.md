@@ -1,3 +1,20 @@
+# 2.5.38: Contract-required preservation state
+
+Verification authors compare all state the contract requires to remain unchanged,
+including complete required record collections. Accurate changed notices and
+unspecified metadata may vary. Existing complete-context meaning inspection and
+positive/negative control rules still apply.
+
+The shared planning prompt advances to 27, its three planning/revision actions
+to 24 and correction-after-review to 12. This is class 6 application guidance
+from Process Package issue 24 and the Repairdesk control retrospective124.
+Existing review identified the overconstrained comparison and unsuitable positive
+fixture; their correction does not show that this wording would have prevented
+the first mistakes. Fresh later authoring and ordinary review must test that.
+
+Existing products retain their selected package and evidence. This source
+candidate is not qualification, live adoption or evidence of preventive effect.
+
 # 2.5.37: Exact saved receipt inspection
 
 Execution guidance distinguishes the complete saved receipt in an execution or
