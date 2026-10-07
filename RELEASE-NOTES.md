@@ -1,3 +1,17 @@
+# 2.5.37: Exact saved receipt inspection
+
+Execution guidance distinguishes the complete saved receipt in an execution or
+settlement response from exported streams, report and artifact files. Compare
+exact receipt locators before relying on operation/latest exports for historical
+inspection; preserve complete observations and artifact inspection.
+
+The shared execution prompt advances to 5, formal execution action to 5 and
+criterion execution action to 4. This is class 6 guidance from Process Package
+issue 22. Kernel behavior, schemas, lifecycle obligations and review criteria
+remain unchanged. Existing products retain their selected package and evidence;
+this source candidate is not qualification, live adoption or demonstrated
+retrieval effectiveness.
+
 # 2.5.36: Current verification criteria and retained history
 
 Verification authors write current shared criteria and predecessor reconciliation
