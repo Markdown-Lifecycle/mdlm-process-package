@@ -1,3 +1,9 @@
+# 2.5.34: Discriminating validation witnesses
+
+Add one syntax-versus-calendar-domain example beside the shared verification-author control rule. Separate validation duties need evidence that distinguishes their rejection causes; useful combined-invalid tests and requirements-derived expectations remain available.
+
+The planning prompt advances to 25, its three planning/revision actions to 22 and correction-after-review to 10. This is class 6 application guidance from Expense F1, with no schema, reviewer rule or lifecycle gate change. Tiny and exploratory stay unchanged. Existing products retain their selected packages and historical evidence; this candidate is not adoption or evidence of preventive effectiveness.
+
 # 2.5.33: Requirement specificity and decomposition guidance
 
 Clarify system allocation versus software-item refinement and the expected
