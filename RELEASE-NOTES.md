@@ -1,3 +1,9 @@
+# 2.5.35: Explicit historical verification applicability
+
+Iterative opts in to verification-applicability@1 on the existing RES type. Ordinary independent-result proposals may explicitly name evidence.historicalResult from the immediate predecessor IMP; the kernel derives optional historical_observation provenance while retaining the original completed receipt and all evidence bytes/times. Only an unchanged selection-only successor and exact retained method qualify. Current independent review and stakeholder acceptance retain their authority, and the reviewer may require fresh execution.
+
+Older kernels reject the new capability. This candidate needs a kernel implementing that contract, and existing products keep their selected package. No live adoption, execution receipt migration, cross-package reuse, longer reuse chain, source-revert support, automatic determinism or current-host-equivalence claim is included. Tiny and exploratory remain unchanged. Source checks and disposable CLI proof establish the bounded contract only; release qualification and live adoption are separate.
+
 # 2.5.34: Discriminating validation witnesses
 
 Add one syntax-versus-calendar-domain example beside the shared verification-author control rule. Separate validation duties need evidence that distinguishes their rejection causes; useful combined-invalid tests and requirements-derived expectations remain available.

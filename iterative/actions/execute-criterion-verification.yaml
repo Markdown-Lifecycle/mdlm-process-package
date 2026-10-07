@@ -1,9 +1,9 @@
 kind: action-definition
 id: execute-criterion-verification
-version: 2
+version: 3
 description: execute criterion verification
 capability: independent-result
-prompt_ref: prompts/execute-verification.md@3
+prompt_ref: prompts/execute-verification.md@4
 types:
 - RES
 subjects: select("current-trials@2", {})
