@@ -1,6 +1,6 @@
 ---
 id: plan-verification
-version: 24
+version: 25
 skills: []
 ---
 
@@ -106,6 +106,8 @@ violation; retain requirement-derived cases when updating invocation details or
 inspection evidence.
 
 Before relying on the method, try relevant controls: an alternative valid output should remain acceptable, and an output with the wrong value, association or meaning should fail. Choose controls for the actual claim and allowed variation. Apply these controls through the complete relevant case path, including waits, branches and assertions. Check that alternatives expressly allowed by the frozen case remain reachable and acceptable, and that a close contradictory result fails even when it shares the expected words or values. They check the verifier's adequacy, not product compliance. Correct an unsuitable predicate or choose a different method when it rejects valid behavior or accepts a contradiction. Bind each promised control claim to an executed stimulus and captured judgment through the applicable case path. An unchanged refusal diagnostic does not exercise contradictory refusal meaning. Shared representative witnesses may establish several claims when their applicability is explained; a Cartesian product of controls and inputs is not required.
+
+When syntax rejection and domain rejection are separate obligations, use discriminating witnesses for each. For example, an impossible-calendar witness uses an otherwise conforming response with a timestamp in contract-permitted syntax and an impossible date; a malformed timestamp alone can establish syntax rejection. Combined-invalid tests remain useful, but establish a separately claimed duty only when the evidence distinguishes it from other rejection causes. Derive the expected public behavior from requirements, independently of product parsing choices.
 
 For demonstration, specify intended actions/results first, preserve the actual computer-use run, then write and rerun a reproducible script from those interactions. Preserve the original expected results and observed failures when demonstration reveals a product defect. A replay is separate evidence; the recording alone does not establish reproducibility. If replay uses an inspection judgment, bind it to the exact case, intent, inputs and captured observations it assessed. Changed observations require fresh inspection; changed intent or inputs require reassessing applicability. Reuse cannot transfer a historical pass to uninspected behavior.
 
