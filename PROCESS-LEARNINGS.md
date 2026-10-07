@@ -33,3 +33,16 @@ Check package loading and all consuming action references. At the next naturally
 ## Explicit historical observation applicability
 
 Issue947 is class 3 declaration-contract agreement with class 6 guidance. An optional historical execution claim needs an explicit package opt-in and managed provenance on the existing result, with original execution times and current independent review preserved. Transaction evidence alone would leave the semantics undeclared to ordinary authors and older kernels. Iterative2.5.35 adds verification-applicability@1 and guidance for evidence.historicalResult; no new type or execution state. One compiled X/Y public journey in the kernel checks retained original bytes, one fewer launch and current review/acceptance gating, including later unrecorded failures. Do not infer host equivalence or method suitability from identity checks.
+
+## Current criteria and pinned history, issue 20
+
+Class 6 authoring guidance. Expense adaptation103 copied the complete predecessor
+objective in all 15 activities and added 1,999 bytes to each. This demonstrates
+recursive narrative growth, not a cause for the later verifier defects. Write
+current criteria, inspectors, evidence sufficiency and target coverage explicitly;
+reference exact pinned predecessor revisions and supporting evidence for history.
+
+Check package loading and all consuming action references without wording tests.
+At the next fresh ordinary authoring/review episode, preserve the first candidate
+and judgment and inspect whether current criteria remain complete without another
+full predecessor-objective copy. No new artifact or review stage is required.
