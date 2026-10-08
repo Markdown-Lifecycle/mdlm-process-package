@@ -1,0 +1,19 @@
+kind: action-definition
+id: continue-exploration
+version: 1
+description: Explore the next useful prototype slice after closing the prior experiment
+capability: experiment
+prompt_ref: prompts/continue-exploration.md@1
+types: [EXP]
+subjects: select("current-experiments@1", {})
+inputs:
+  experiment: subject
+  observations: 'select("observations-against-experiment@1", {experiment: subject})'
+  trials: 'select("trials-for@2", {experiment: subject})'
+optional: true
+when: 'exists("closed-experiment@2", {experiment: subject}) && none("current-requirements@1", {})'
+revises:
+  EXP: experiment
+fixed_payload:
+  EXP:
+    publication: recorded
