@@ -1,3 +1,21 @@
+# 2.5.39: Worked leaf-result sufficiency example
+
+The shared requirement skill adds one example of the existing immediate-child
+counterexample check: state preservation can hold while a parent-selected original
+commitment return is missing. The owning leaf incorporates only the selected
+normative ICD aspect; unrelated clauses and permitted confirmation channels stay
+open. This teaches existing rules without adding an obligation, field or gate.
+
+Typed-requirements advances to 24, its twelve consuming prompts and thirteen
+actions advance once, and the distribution/iterative manifest advance to 2.5.39.
+Process Package issue 26 follows repeated Repairdesk decomposition misses recorded
+in the 2026-10-08 03:51 retrospective. This is class 6 application guidance with
+class 10 shared content judgment; it does not establish preventive effectiveness.
+A fresh reasoning comparison in another domain remains proposed, not executed.
+
+Existing selected packages, histories and runtime contracts remain unchanged.
+This source candidate is not a packed, qualified, released or adopted artifact.
+
 # 2.5.38: Contract-required preservation state
 
 Verification authors compare all state the contract requires to remain unchanged,

@@ -1,9 +1,9 @@
 ---
 id: rebind-product
-version: 35
+version: 36
 skills:
 - skills/product-quality.md@8
-- skills/typed-requirements.md@23
+- skills/typed-requirements.md@24
 - skills/source-trace.md@11
 ---
 

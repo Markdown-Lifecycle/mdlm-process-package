@@ -1,6 +1,6 @@
 ---
 id: typed-requirements
-version: 23
+version: 24
 ---
 
 # Author one normal-link requirement graph
@@ -127,6 +127,15 @@ normal interface route. A short reference must not silently import unrelated
 duties. Keep every required aspect owned by the selected graph's functional leaves
 or exact shared requirements; narrowing a citation does not retire the remaining
 behavior.
+
+For example, a parent selects an ICD's exact-repeat duty to return the original
+commitment. Its children require only state preservation, serialization and
+out-of-domain refusal. An in-domain exact repeat that preserves state but returns
+an error satisfies those children while violating the parent. Incorporate the
+selected return aspect in the owning functional leaf's statement/EARS, with the
+exact `uses-interface` binding; unrelated ICD duties stay unselected. Where another
+parent permits confirmation of the same commitment by reply or authoritative
+acquisition, preserve both channels.
 
 For each operation, apply its exact incorporated clauses to the inputs that operation
 actually supplies. The clauses may own encoding, schema, ordering and compatibility
