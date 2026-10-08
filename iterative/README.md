@@ -4,6 +4,13 @@
 
 Discuss the intended product and agree its smallest useful scope. Choose vertical slices that resolve uncertainty, build a usable integrated prototype, then use it while progressively formalizing necessary behavior. EXP records provisional criteria and choices, TRY binds committed runnable source, OBS records actual execution and observations, and FDB records stakeholder feedback. These planning practices guide agent choices; they are not additional kernel gates.
 
+After a closed exploratory slice and before formal requirements, optional
+`continue-exploration` publishes a successor in the same EXP lineage for the next
+useful prototype slice. It preserves the earlier keep/drop or explicit stakeholder
+stop and all exact evidence. The successor reopens ordinary preparation and needs
+independently authored verification of its own exact criteria. Formalization
+remains a separate optional choice.
+
 `draft-requirements` is optional and takes the current EXP as context. Choose it when stakeholder intent justifies a formal scope, during exploration or after its closure. Publishing the fresh REQ/DCP/RQS set starts ordinary formal obligations in the same history. It creates fresh REQs with optional, many-to-many exact `informed-by` links to EXP/OBS. A requirement may have no predecessor. Read origins through `mdlm show <exact-revision> --json`; the review context includes the links in its requirement graph. Origin records explain a decision but do not verify implementation or approve a baseline. EXP identities never become REQ identities.
 
 Formal work uses the existing REQ/DCP/RQS graph, complete source attribution, exact execution receipt, independent reviews and stakeholder acceptance. Only publish REQs for the current formal scope: the graph includes all current REQs, and source inventory covers the whole selected Git repository. Prototype source has no blanket traceability requirement.

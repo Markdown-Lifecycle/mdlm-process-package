@@ -1,3 +1,17 @@
+# 2.5.39: Continue exploration after a closed prototype slice
+
+Optional `continue-exploration` publishes a successor in the existing EXP lineage
+after keep/drop or explicit stakeholder stop, before formal requirements. Ordinary
+prototype preparation reopens for that exact successor; earlier observations and
+results remain history. Its new criteria need independently authored verification.
+Formalization remains optional. Existing closure and terminal semantics are unchanged.
+
+Process issue 28 addresses a pre-formal continuation gap observed in Energy. This
+adds one action, prompt and observation-context selector, with unchanged schemas, contracts and capabilities.
+Compatible adoption must use preview/apply/settlement and preserve original packages
+and provenance. Exact tested kernel and preserved-history upgrade evidence belong
+in qualification; this source change alone is not live adoption or product evidence.
+
 # 2.5.38: Contract-required preservation state
 
 Verification authors compare all state the contract requires to remain unchanged,

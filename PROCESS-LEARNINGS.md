@@ -46,3 +46,18 @@ Check package loading and all consuming action references without wording tests.
 At the next fresh ordinary authoring/review episode, preserve the first candidate
 and judgment and inspect whether current criteria remain complete without another
 full predecessor-objective copy. No new artifact or review stage is required.
+
+## Continue exploration after a closed slice, issue 28
+
+Class 1 route completeness extends to successful slice closure: a truthful keep
+must permit the next intended prototype slice before formalization. Energy's
+one-meter keep exposed that frame required no EXP, revision required a revise OBS,
+and comparison required formal acceptance. Keep the truthful closure and add an
+optional same-lineage successor before formal requirements, using existing closure
+semantics. Classes 2, 5 and 6 preserve closure, lineage and exact authoring guidance.
+
+Check keep/drop/explicit stop and unresolved/open/formal-scope denials through the
+package evaluator. On a preserved-history ordinary clone, use public compatible
+upgrade preview/apply/settlement, publish the successor and confirm ordinary
+preparation reopens with earlier records and package copies intact. Old PASS stays
+bound to old criteria; a new slice needs independent verification and fresh use.
