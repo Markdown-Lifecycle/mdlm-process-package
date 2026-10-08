@@ -1,6 +1,6 @@
 {
   "name": "mdlm-process-package",
-  "version": "2.5.38",
+  "version": "2.5.39",
   "private": true,
   "description": "Declarative MDLM Process Packages, released independently of the kernel",
   "files": [
