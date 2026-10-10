@@ -97,12 +97,18 @@ package unchanged. Test an upgrade on a preserved copy of the lifecycle history:
 # Run from the preserved lifecycle copy. Use a new output and operation ID.
 MDLM_UPGRADE_DIR=$(mktemp -d)
 node "$MDLM_KERNEL/dist/mdlm.js" upgrade preview "$MDLM_PROCESS/iterative" --json > "$MDLM_UPGRADE_DIR/preview.json"
+```
+
+Read the saved preview, release notes and before/after expectations. Continue only
+when they describe the intended compatible update:
+
+```sh
 node "$MDLM_KERNEL/dist/mdlm.js" upgrade apply "$MDLM_UPGRADE_DIR/preview.json" unique-upgrade-operation --json
 node "$MDLM_KERNEL/dist/mdlm.js" upgrade settlement unique-upgrade-operation --json
 node "$MDLM_KERNEL/dist/mdlm.js" expectations --json
 ```
 
-Inspect the preview and its notes before apply. Confirm history, original package
+Confirm history, original package
 copies and applicable reviews remain intact, then address newly exposed work.
 Recover an uncertain apply through settlement before any further mutation. A
 changed target or lifecycle requires a fresh preview. Compatible upgrade support
@@ -112,19 +118,15 @@ an upgrade problem.
 
 ## Next work
 
-- Reproduce a complete fresh lifecycle in the prepared cloud environment and save
-  a portable handoff, including independent verification and review.
-- Exercise the current dated-budget maintenance change in Energy Desk after its
-  accepted baseline and evidence are available in durable storage. Keep the
-  original run identities; follow its handoff rather than restarting from memory.
-- Test an external meter interface and then an implementation in another language
-  against the same required behavior. Inspect allocation, decomposition and
-  evidence sufficiency as complexity increases.
-- Qualify package updates against preserved in-progress and accepted histories.
-  Check which work becomes due and whether unaffected evidence stays applicable.
+The kernel's [cloud next steps](https://github.com/taylorrowser/mdlm/blob/main/docs/CLOUD-NEXT-STEPS.md)
+own the campaign order and migration status. Process work should follow those
+experiments: inspect the requirements and decompositions, compare actual review
+findings with the instructions, and improve the owning guidance when a run exposes
+a problem. Package validation and an instruction change alone do not demonstrate
+better agent behavior.
 
-Choose one bounded issue and learning question at a time. Record findings in the
-owning issue and improve the relevant process instruction when actual use shows a
-problem. Use [open issues](https://github.com/taylorrowser/mdlm-process-package/issues)
-and [open PRs](https://github.com/taylorrowser/mdlm-process-package/pulls) for current
-ownership and ordering.
+Choose one bounded issue and learning question at a time. Use
+[open issues](https://github.com/taylorrowser/mdlm-process-package/issues) and
+[open PRs](https://github.com/taylorrowser/mdlm-process-package/pulls) for current
+ownership and package-specific follow-ups. Record exact candidate, kernel and
+product identities with findings so the next cloud task can reproduce them.
