@@ -16,6 +16,8 @@ agent guidance. Each product retains its exact selected package and history.
 - **Use a process:** [iterative](iterative/README.md) supports prototype-to-formal
   work; [exploratory](exploratory/README.md) and [tiny](process/README.md) describe
   the smaller packages. [catalog.json](catalog.json) maps their directories.
+- **Independent review registration and CLI operations:** use the kernel
+  [operator guide](https://github.com/taylorrowser/mdlm/blob/main/operator/MDLM.md).
 - **Upgrade a product:** read [release notes](RELEASE-NOTES.md) and the selected
   package's upgrade instructions. Installing a new kernel does not select a new
   process for an existing product.
