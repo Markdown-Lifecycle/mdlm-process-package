@@ -49,7 +49,7 @@ node "$MDLM_KERNEL/dist/mdlm.js" --version
 node "$MDLM_KERNEL/dist/mdlm.js" process validate --ref "$MDLM_PROCESS/process" --json
 node "$MDLM_KERNEL/dist/mdlm.js" process validate --ref "$MDLM_PROCESS/exploratory" --json
 node "$MDLM_KERNEL/dist/mdlm.js" process validate --ref "$MDLM_PROCESS/iterative" --json
-npm --prefix "$MDLM_PROCESS" pack --dry-run --json
+npm pack "$MDLM_PROCESS" --dry-run --json
 ```
 
 Save the full validation outputs, including the package identity and digest. Build
