@@ -1,6 +1,6 @@
 ---
 id: draft-requirements
-version: 28
+version: 29
 skills:
 - skills/product-quality.md@8
 - skills/typed-requirements.md@23
@@ -10,7 +10,7 @@ skills:
 
 Apply the supplied shared product-quality skill before authoring or reviewing.
 
-Read the stakeholder request. Apply the shared author checklist and record the per-system architecture/depth rationale. Write focused stakeholder and software REQ statements in one batch using the typed-requirements skill. Decompose behavior through ordinary links until software leaves are concrete enough to implement and verify. Include relevant state transitions, boundaries and failures without inventing obligations. The CLI generates the complete RQS grouping and the next independent Review judges the whole set.
+Read the stakeholder request. Apply the shared author checklist and record the per-system architecture/depth rationale. Write focused stakeholder REQ statements only, using the typed-requirements skill, and record the ICDs they depend on. Settle stakeholder intent before any software refinement: cardinality, error and refusal precedence, time and boundary tolerances, response deadlines and the cases the stakeholder's use cannot reach. Include relevant state transitions, boundaries and failures without inventing obligations. The next independent Review judges these roots on their own. After it passes, `elaborate-requirements` adds one decomposition group at a time, and each group gets its own review.
 
 Use the supplied direct proposal guidance and payload schema. The CLI supplies identities, exact required links and publication markers. Submit the authored values with mdlm proposal submit. Keep the body empty when the structured payload and concise rationale suffice. For useful descriptive supporting specification, follow typed-requirements' owning-REQ body guidance; all required duties remain in normative fields or exact ICD clauses.
 

@@ -61,3 +61,11 @@ package evaluator. On a preserved-history ordinary clone, use public compatible
 upgrade preview/apply/settlement, publish the successor and confirm ordinary
 preparation reopens with earlier records and package copies intact. Old PASS stays
 bound to old criteria; a new slice needs independent verification and fresh use.
+
+## Stage requirements so each review judges one group, kernel issue 1088
+
+Class 1 route completeness, with class 6 guidance. Watt Watch V1 (`mdlm-iterative@2.5.26`) drafted all 30 REQs and 12 DCPs in one set, and every requirements review judged the whole set: rounds 1–3 failed and round 4 passed, from 11:44 to 13:20. Most findings were missing stakeholder intent (feed cardinality, a mistyped circuit, midnight tolerance, malformed-response precedence, meter response time) that only deep review found. A failed whole-set review gives no credit, so each round re-assessed everything. Verification then fanned out to 38 activities on one shared verifier repository, so each library fix revised all of them.
+
+Draft and review stakeholder roots first. Then add one decomposition group per autonomous `elaborate-requirements` transaction and review only that group. The kernel keeps earlier passed records unchanged, and existing review credit narrows the assessment rows. Implementation waits for a complete graph. Write verification per passed leaf group, and freeze or version the shared verifier library before activities fan out. Stakeholder refinement keeps its authority because it changes intent rather than elaborating it.
+
+Check package loading and the eligibility in `tests/staged-requirements.mjs`. Compare review rounds and timings in a fresh staged run from the same stakeholder intent. One run is a comparison, not proof of a general improvement.

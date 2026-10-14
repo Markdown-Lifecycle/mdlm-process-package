@@ -1,6 +1,6 @@
 kind: type-definition
 id: RQS
-version: 2
+version: 3
 description: Requirement set
 name: Requirement set
 extends: titled-datum@1
@@ -18,6 +18,9 @@ payload_schema:
   properties:
     publication:
       const: recorded
+    trace_complete:
+      type: boolean
+      description: Kernel-derived; every stakeholder root is decomposed and a software leaf exists
 outgoing_links:
 - id: contains
   description: contains
@@ -82,3 +85,4 @@ outgoing_links:
   inverse_label: incoming-retires
 kernel_managed_payload_paths:
 - title
+- trace_complete

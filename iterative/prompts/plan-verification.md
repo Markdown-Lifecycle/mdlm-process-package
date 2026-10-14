@@ -1,6 +1,6 @@
 ---
 id: plan-verification
-version: 27
+version: 28
 skills: []
 ---
 
@@ -9,6 +9,10 @@ skills: []
 Give a fresh verification author `mdlm verification context <exact-RQS-or-EXP> --output <new-file> --json`. Supply that export, the public operation contact, and a source-free projection of the selected direct guidance containing only action, subject, package, prompt, payloadSchemas and candidates. Pass these fields unchanged with saved file paths and digests; they identify the selected action/version, exact subject, package identity/digest and candidate bindings. Keep the full guidance context with the lifecycle author.
 
 The receiving author checks the saved bytes against those digests and confirms that the projected package matches the intent export's package. The verification author defines methods, cases, expected results and inspection criteria without product source, implementation explanations or product-authored expectations. Necessary source inspection follows the criteria freeze described below; source provides evidence, never the required behavior. Copy the intent export's subject into authoring_subject and its authoringContext digest into authoring_context. Ask for requirement clarification when two readings of the public contract give different stakeholder-visible results; otherwise choose a check that accepts both readings and record that choice in the coverage rationale.
+
+Verification can start per group. Once a decomposition group passes requirements review and its children are leaves that will not be decomposed further, export the context for that exact RQS and author activities for those leaves while other groups are still being elaborated. Do not plan activities for a requirement that is still to be decomposed.
+
+Before activities fan out, freeze the shared verifier library they depend on: helpers, fixtures, runners and report writing. Each later library change publishes a new commit that every dependent activity must reselect. Either settle the shared library first, or version it per group so a change touches only that group's activities.
 
 Commit the verifier in a separate Git repository. Define each activity's method and objective, exact REQ or EXP targets, cases and coverage. Each case has preconditions, intended actions, expected results and a rationale. Keep coverage rationale about the method and its limits; label retained preparation notes as historical, and read current execution and review state from their exact records and verification status.
 
