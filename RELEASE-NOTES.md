@@ -1,3 +1,9 @@
+# 2.5.41: Historical results from earlier selection-only revisions
+
+Execution guidance lets `evidence.historicalResult` name the original execution RES on any earlier revision of the same IMP lineage, as long as every later revision changed verification selection only. This applies when one activity is revised several times: unchanged siblings keep pointing at their original run instead of being re-run every second round. It requires the kernel change in Markdown-Lifecycle/mdlm-kernel#1090; older kernels still accept only the immediate predecessor. A historical RES still can't serve as the original, and source reverts and cross-package reuse stay unsupported.
+
+The shared execution prompt advances to 6, and both execution actions are bumped. There are no schema, capability or selector changes. Evidence: Watt Watch V1 re-ran unchanged activities across execution rounds 10–17 (kernel issue 947).
+
 # 2.5.40: Staged requirements authoring and review
 
 The iterative package now writes and reviews requirements in stages. `draft-requirements` publishes stakeholder roots and their ICDs. After a stage passes independent review, the new autonomous `elaborate-requirements` adds exactly one decomposition group, and the next review assesses only that group's new requirements. `implement-product` and `rebind-product` become available only once the graph is complete (`trace_complete`); elaboration ranks below implementation and reopens if refinement leaves the graph incomplete. Verification guidance starts activities per passed leaf group and asks authors to freeze or version the shared verifier library before activities fan out. `refine-requirements` keeps stakeholder authority for changed intent.

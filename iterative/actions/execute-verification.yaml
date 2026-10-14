@@ -1,9 +1,9 @@
 kind: action-definition
 id: execute-verification
-version: 5
+version: 6
 description: execute verification
 capability: independent-result
-prompt_ref: prompts/execute-verification.md@5
+prompt_ref: prompts/execute-verification.md@6
 types:
 - RES
 subjects: select("current-implementations@1", {})
