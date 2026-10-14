@@ -41,5 +41,5 @@ const refined = {...partial, revision: 2, revision_id: 'RQS-set-r00002'};
 const refinedData = [root_, complete, product, refined, pass(refined, 'REV-refined')];
 assert.equal(evaluate(refinedData, elaborate.when, refined), true, 'A partial graph after refinement reopens elaboration');
 assert.equal(evaluate(refinedData, pkg.actions['rebind-product'].when, refined), false, 'A partial graph cannot be rebound');
-assert.ok(elaborate.priority < implement.priority, 'Implementation ranks first once complete');
+assert.ok(elaborate.priority > implement.priority, 'Expectations sort ascending by priority, so implementation ranks first once complete');
 console.log(JSON.stringify({ok: true, package: pkg.manifest.version, cases: 11}));
