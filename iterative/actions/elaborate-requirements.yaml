@@ -8,8 +8,8 @@ types: [REQ, DCP, RQS]
 subjects: select("current-requirements@1", {})
 inputs:
   subject: subject
-when: 'exists("pass-reviews@2", {subject: subject}) && none("fail-reviews@2", {subject: subject}) && none("implementations-for@1", {requirements: subject}) && none("prior-implementations-for@1", {requirements: subject}) && none("accepted-requirement-lineage@1", {requirements: subject}) && none("change-for-set@1", {requirements: subject})'
-priority: 100
+when: 'exists("pass-reviews@2", {subject: subject}) && none("fail-reviews@2", {subject: subject}) && none("accepted-requirement-lineage@1", {requirements: subject}) && none("change-for-set@1", {requirements: subject}) && (subject.payload.trace_complete == false || (none("implementations-for@1", {requirements: subject}) && none("prior-implementations-for@1", {requirements: subject})))'
+priority: 90
 revises:
   RQS: subject
 fixed_payload:
