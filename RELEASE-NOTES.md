@@ -1,3 +1,9 @@
+# 2.5.42: Bounded interface inputs and joint satisfiability in requirements review
+
+Requirements review now checks that every input dimension of an incorporated interface (sizes, counts, lengths, rates, durations, optional parts such as a request body) is bounded or explicitly declared unbounded with a rationale. A universal clause such as "refuse every request that is not X" is `needs-change` unless X is fully settled. Review also checks that the interface clauses and requirements a group relies on can all hold together for every input, including timing against validation, and gives a concrete counterexample input when they cannot. `record-interface`, `revise-interface` and `draft-requirements` ask authors for the same bounds and the same joint check.
+
+Prompt versions: review-requirements 34, draft-requirements 30, record-interface 5, revise-interface 5, with their actions bumped. There are no schema, capability, selector or kernel changes. Existing products keep their selected package. Evidence: both Watt Watch runs lost their late time to implementation reviews on HTTP request edge cases; see PROCESS-LEARNINGS. This change alone does not show fewer implementation-review rounds.
+
 # 2.5.41: Historical results from earlier selection-only revisions
 
 Execution guidance lets `evidence.historicalResult` name the original execution RES on any earlier revision of the same IMP lineage, as long as every later revision changed verification selection only. This applies when one activity is revised several times: unchanged siblings keep pointing at their original run instead of being re-run every second round. It requires the kernel change in Markdown-Lifecycle/mdlm-kernel#1090; older kernels still accept only the immediate predecessor. A historical RES still can't serve as the original, and source reverts and cross-package reuse stay unsupported.

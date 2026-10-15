@@ -1,9 +1,9 @@
 kind: action-definition
 id: record-interface
-version: 4
+version: 5
 description: Record a provisional interface agreement
 capability: experiment
-prompt_ref: prompts/record-interface.md@4
+prompt_ref: prompts/record-interface.md@5
 types: [ICD]
 inputs: {}
 when: 'true'
