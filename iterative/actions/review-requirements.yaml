@@ -1,9 +1,9 @@
 kind: action-definition
 id: review-requirements
-version: 26
+version: 27
 description: Review requirements
 capability: review
-prompt_ref: prompts/review-requirements.md@33
+prompt_ref: prompts/review-requirements.md@34
 types:
 - REV
 subjects: select("current-requirements@1", {})
