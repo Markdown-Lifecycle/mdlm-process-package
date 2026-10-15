@@ -1,6 +1,6 @@
 kind: process-package-manifest
 id: mdlm-iterative
-version: 2.5.39
+version: 2.5.40
 status: experimental
 description: Explore a useful product, then progressively baseline necessary behavior.
 kernel_contract:
@@ -37,6 +37,9 @@ kernel_capabilities:
   review-correction@1:
     type: RQS
     review_type: REV
+  staged-requirements@1:
+    type: RQS
+    action: elaborate-requirements
   verification-applicability@1:
     type: RES
   independent-verification@1:

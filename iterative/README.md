@@ -15,6 +15,12 @@ remains a separate optional choice.
 
 Formal work uses the existing REQ/DCP/RQS graph, complete source attribution, exact execution receipt, independent reviews and stakeholder acceptance. Only publish REQs for the current formal scope: the graph includes all current REQs, and source inventory covers the whole selected Git repository. Prototype source has no blanket traceability requirement.
 
+## Staged requirements
+
+Requirements are written and reviewed in stages. `draft-requirements` publishes stakeholder roots and the ICDs they depend on, and independent review judges those roots alone. After a stage passes, `elaborate-requirements` adds exactly one decomposition group: one existing parent and its new software children. The kernel (`staged-requirements@1`) rejects an elaboration that rewords, removes or regroups any existing requirement or group, or that adds a stakeholder root. The next review then assesses only the new requirements and group, because earlier passing judgments keep their credit. A failed stage goes through `correct-requirements-after-review` before elaboration continues. Each set records the kernel-managed `trace_complete`. `implement-product` and `rebind-product` become available only once every stakeholder root is decomposed and a software leaf exists. From then on implementation ranks above further elaboration, which stays offered until implementation starts. Use it only where a leaf is not yet concrete enough. A group may reuse existing requirements as shared children. If stakeholder refinement after implementation adds a root that is not yet decomposed, elaboration reopens until the graph is complete again.
+
+Verification can follow each group: once a group passes and its children are leaves, export that set's verification context and author their activities while other groups continue. Activities must name the RQS current at publication, so re-export and confirm their targets are unchanged before publishing. Freeze the shared verifier library before activities fan out, or version it per group, so a library fix does not revise every activity.
+
 Before first acceptance, optional `refine-requirements` records stakeholder
 clarification or changed intent even after requirements review has passed. It
 requires explicit stakeholder authority, preserves unchanged requirements and
@@ -33,7 +39,7 @@ compares expected specificity at each level, distinguishes system allocation fro
 software refinement, and locates supplementary architecture notes in an owning
 REQ. Its worked API/browser slice and decomposition checklist apply to authors
 and reviewers. The requirement graph supports shared children and uneven
-depth without extra review transactions or fixed tiers. Multi-component products
+depth without fixed tiers; each staged group gets its own small review. Multi-component products
 may tag software REQs with optional `level` and `component` fields, as
 types/REQ.yaml and typed-requirements describe. This representation keeps
 the note in ordinary version history and source-free exports, but adds no separate

@@ -1,0 +1,21 @@
+kind: action-definition
+id: elaborate-requirements
+version: 1
+description: Add one decomposition group under a reviewed requirement set
+capability: requirements
+prompt_ref: prompts/elaborate-requirements.md@1
+types: [REQ, DCP, RQS]
+subjects: select("current-requirements@1", {})
+inputs:
+  subject: subject
+when: 'exists("pass-reviews@2", {subject: subject}) && none("fail-reviews@2", {subject: subject}) && none("accepted-requirement-lineage@1", {requirements: subject}) && none("change-for-set@1", {requirements: subject}) && (subject.payload.trace_complete == false || (none("implementations-for@1", {requirements: subject}) && none("prior-implementations-for@1", {requirements: subject})))'
+priority: 110
+revises:
+  RQS: subject
+fixed_payload:
+  REQ:
+    publication: recorded
+  DCP:
+    publication: recorded
+  RQS:
+    publication: recorded

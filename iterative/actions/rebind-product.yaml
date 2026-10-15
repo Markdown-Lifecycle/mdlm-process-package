@@ -1,6 +1,6 @@
 kind: action-definition
 id: rebind-product
-version: 25
+version: 26
 description: Bind unchanged or corrected product to revised expectations
 capability: implementation
 prompt_ref: prompts/rebind-product.md@35
@@ -12,7 +12,7 @@ inputs:
   prior: 'one("prior-implementations-for@1", {requirements: subject})'
 when: '!(none("prior-implementations-for@1", {requirements: subject}) || exists("implementations-for@1",
   {requirements: subject})) && ((exists("pass-reviews@2", {subject: subject}) || exists("reusable-requirements-review@1", {requirements: subject})) && none("fail-reviews@2",
-  {subject: subject}) && exists("prior-implementations-for@1", {requirements: subject}))'
+  {subject: subject}) && exists("prior-implementations-for@1", {requirements: subject})) && subject.payload.trace_complete != false'
 priority: 100
 links:
   IMP:
