@@ -1,6 +1,6 @@
 ---
 id: revise-interface
-version: 5
+version: 6
 ---
 
 # Revise an interface agreement
@@ -11,7 +11,7 @@ The ICD revision identifies this lifecycle claim. A protocol version identifies 
 
 Select necessary verification contracts with optional uses-interface links from EXP or REQ to exact ICD revisions. TRY may also record its exact prototype interface use. Prototype use is provisional. For formal scope, each owning REQ states its obligation and explicitly names the applicable normative clause identifiers in that exact ICD. Keep the detailed contract in one place; a whole-ICD link does not make every design choice mandatory. Code and verification continue to trace through REQs. An ICD is useful when a boundary needs an explicit agreement, not for every function call.
 
-Revise the supplied ICD lineage. Explain the changed agreement and affected consumers in compatibility. Prior exact links and evidence keep their original meaning. A new revision is available for exploration, not automatically adopted by existing users. To adopt it in accepted scope, revise affected referring REQs through the approved change process, renew relevant integration evidence, and obtain the normal review and acceptance.
+Revise the supplied ICD lineage. Explain the changed agreement and affected consumers in compatibility. Prior exact links and evidence keep their original meaning. A new revision is available for exploration, not automatically adopted by existing users. To adopt it, retarget the requirement set with one `retargets-interface` link on its next RQS (stakeholder refinement before acceptance, the approved change process after) and revise only referring REQs whose own wording must change. Renew relevant integration evidence and obtain the normal review and acceptance.
 
 For an EXP with no TRY yet, use optional `amend-experiment` to adopt the recorded
 ICD revision and export fresh criterion context before independent verification.

@@ -1,9 +1,9 @@
 ---
 id: review-requirements
-version: 34
+version: 35
 skills:
 - skills/product-quality.md@8
-- skills/typed-requirements.md@23
+- skills/typed-requirements.md@24
 ---
 
 # Review requirements
@@ -24,6 +24,6 @@ Use the supplied direct proposal guidance and payload schema. The CLI supplies i
 
 For each `informed-by` link in the requirement graph, read its exact EXP/OBS origin in the supplied review context's `records`, matching `revision_id` to the link target. Judge necessity against stakeholder intent and the stated formal scope. An origin link explains derivation; it does not prove correctness or establish stakeholder acceptance. Check that adjacent exploratory choices have not silently become obligations.
 
-Read the exact ICD records supplied in interfaces. Apply typed-requirements' normative ownership rule: assess the applicable stable clauses named by each owning REQ, and report required behavior found only in rationale or without an explicit owner. Judge those obligations against both endpoint responsibilities, assumptions and integration evidence. Referenced descriptive or provisional design choices are not automatically requirements. Old interface evidence applies to its exact bindings; a revised contract needs an explicit applicability assessment.
+Read the exact ICD records supplied in interfaces. Apply typed-requirements' normative ownership rule: assess the applicable stable clauses named by each owning REQ, and report required behavior found only in rationale or without an explicit owner. Judge those obligations against both endpoint responsibilities, assumptions and integration evidence. Referenced descriptive or provisional design choices are not automatically requirements. Old interface evidence applies to its exact bindings; a revised contract needs an explicit applicability assessment. When the set retargets an agreement, the graph's `interfaceRetargets` lists each unchanged requirement whose binding moved from `bound` to `selected`, and those requirements are back in your assessment rows. Compare the clauses each one cites in both revisions. Mark it `valid` only if its unchanged wording still states the right obligation under the new clauses; otherwise mark it `needs-change`.
 
 Check that every input dimension of an incorporated interface is bounded or explicitly declared unbounded with a rationale: sizes, counts, lengths, rates, durations and optional parts such as a request body. A universal clause such as "refuse every request that is not X" is `needs-change` unless X is fully settled; otherwise each implementation review finds the next unstated input case. Check that the interface clauses and requirements a group relies on can all hold together for every input, including timing against validation: a deadline and a duty to refuse invalid input conflict when, under the stated bounds, the input needed for that decision can arrive too late to validate and refuse within the deadline. When they cannot, mark the owning requirement `needs-change` and give a concrete counterexample input.

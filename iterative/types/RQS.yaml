@@ -1,6 +1,6 @@
 kind: type-definition
 id: RQS
-version: 3
+version: 4
 description: Requirement set
 name: Requirement set
 extends: titled-datum@1
@@ -71,6 +71,18 @@ outgoing_links:
     maximum: many
   freeze_resolution: already-exact
   inverse_label: incoming-decomposition
+- id: retargets-interface
+  description: Newer exact interface revision adopted by every selected requirement bound to an older revision of that agreement
+  targets:
+  - kind: datum
+    types:
+    - ICD
+    identity: revision
+  cardinality:
+    minimum: 0
+    maximum: many
+  freeze_resolution: already-exact
+  inverse_label: incoming-retargets-interface
 - id: retires
   description: Explicit removal from this selected requirement graph
   targets:

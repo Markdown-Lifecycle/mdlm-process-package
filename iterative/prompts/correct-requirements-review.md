@@ -1,9 +1,9 @@
 ---
 id: correct-requirements-review
-version: 6
+version: 7
 skills:
 - skills/product-quality.md@8
-- skills/typed-requirements.md@23
+- skills/typed-requirements.md@24
 ---
 Correct an independently acknowledged error in the current failed requirements judgment.
 
