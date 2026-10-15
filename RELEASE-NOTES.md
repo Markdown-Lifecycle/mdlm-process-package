@@ -1,3 +1,9 @@
+# 2.5.43: Per-group verification keeps its authoring set
+
+Per-group verification no longer rebinds activities to the current RQS before publication. An activity keeps the set its verification author exported as `authoring_subject` and `authoring_context` while later groups are elaborated. The kernel accepts an earlier revision of the current set while every targeted requirement revision and the interfaces it uses are still selected unchanged, and names the changed target otherwise; only then is a re-export needed. This requires the kernel change in Markdown-Lifecycle/mdlm-kernel#1094; older kernels still require the current set and the rebind steps from 2.5.41 and 2.5.42.
+
+Prompt versions: plan-verification 29 (plan-verification, plan-criterion-verification and revise-verification actions 26, correct-verification-after-review 14) and elaborate-requirements 2 (action 2). There are no schema, capability or selector changes. Evidence: staged Watt Watch run, friction F5/F6, where an activity authored from RQS r00005 was rejected at r00012 although its targets were byte-identical.
+
 # 2.5.42: Bounded interface inputs and joint satisfiability in requirements review
 
 Requirements review now checks that every input dimension of an incorporated interface (sizes, counts, lengths, rates, durations, optional parts such as a request body) is bounded or explicitly declared unbounded with a rationale. A universal clause such as "refuse every request that is not X" is `needs-change` unless X is fully settled. Review also checks that the interface clauses and requirements a group relies on can all hold together for every input, including timing against validation, and gives a concrete counterexample input when they cannot. `record-interface`, `revise-interface` and `draft-requirements` ask authors for the same bounds and the same joint check.
