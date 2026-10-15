@@ -1,9 +1,9 @@
 ---
 id: elaborate-requirements
-version: 2
+version: 3
 skills:
 - skills/product-quality.md@8
-- skills/typed-requirements.md@23
+- skills/typed-requirements.md@24
 ---
 
 # Elaborate one decomposition group

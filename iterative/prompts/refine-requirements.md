@@ -1,9 +1,9 @@
 ---
 id: refine-requirements
-version: 22
+version: 23
 skills:
 - skills/product-quality.md@8
-- skills/typed-requirements.md@23
+- skills/typed-requirements.md@24
 ---
 
 # Refine requirements before first acceptance
@@ -19,12 +19,15 @@ Preserve unchanged requirement revisions. Publish one successor RQS in the same
 lineage; the CLI selects the graph and refreshes affected decomposition endpoints.
 Author a DCP revision only when its membership changes. Preserve earlier wording,
 reviews and evidence. If the clarification changes a selected public interface,
-revise the ICD through its own action and select its exact successor where needed.
+revise the ICD through its own action, then retarget the set to that revision
+with one `retargets-interface` link on the RQS candidate (typed-requirements).
+Revise only the requirements whose own wording must change.
 
 After publication, refresh expectations and obtain independent requirements
 review on the successor RQS. Use its native review context for the required
 statement and decomposition assessments. Export the successor verification
 context for independent verification; prior activities and implementation evidence
-retain their exact old bindings. Follow current implementation, verification and
+retain their exact old bindings. A retarget alone revises no requirement, so
+activities verifying only unchanged requirements need no revision for it. Follow current implementation, verification and
 acceptance guidance for the revised selection. Accepted lineages and change-bound
 work use the approved-change or correction route instead.

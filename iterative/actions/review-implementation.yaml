@@ -1,14 +1,14 @@
 kind: action-definition
 id: review-implementation
-version: 26
+version: 27
 description: Review implementation and execution evidence
 capability: review
-prompt_ref: prompts/review-implementation.md@38
+prompt_ref: prompts/review-implementation.md@39
 types:
 - REV
 subjects: select("current-implementations@1", {})
 inputs:
-  interfaces: 'select("selected-interfaces@1", {requirements: one("requirements-for@1", {implementation: subject})})'
+  interfaces: 'select("selected-interfaces@2", {requirements: one("requirements-for@1", {implementation: subject})})'
   subject: subject
   requirements: 'one("requirements-for@1", {implementation: subject})'
   activities: 'select("selected-verification-activities@1", {product: subject})'

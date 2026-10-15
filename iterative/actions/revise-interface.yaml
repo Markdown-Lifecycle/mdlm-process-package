@@ -1,9 +1,9 @@
 kind: action-definition
 id: revise-interface
-version: 5
+version: 6
 description: Revise an exact interface agreement while preserving prior uses
 capability: experiment
-prompt_ref: prompts/revise-interface.md@5
+prompt_ref: prompts/revise-interface.md@6
 types: [ICD]
 subjects: select("current-interfaces@1", {})
 inputs:

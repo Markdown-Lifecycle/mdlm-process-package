@@ -1,0 +1,19 @@
+kind: selector-definition
+id: interface-retargets-for
+version: 1
+description: Interface revisions a requirement set adopts for its unchanged requirements
+parameters:
+- name: requirements
+  kind: revision
+  types: [RQS]
+result_kind: revision
+query:
+  from:
+    relation: outgoing-links
+    of: requirements
+    link: retargets-interface
+    emit: target
+    types: [ICD]
+  as: item
+  distinct: true
+  order_by: [identity.revision_id]

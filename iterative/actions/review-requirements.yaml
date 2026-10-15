@@ -1,16 +1,16 @@
 kind: action-definition
 id: review-requirements
-version: 27
+version: 28
 description: Review requirements
 capability: review
-prompt_ref: prompts/review-requirements.md@34
+prompt_ref: prompts/review-requirements.md@35
 types:
 - REV
 subjects: select("current-requirements@1", {})
 inputs:
-  interfaces: 'select("selected-interfaces@1", {requirements: subject})'
+  interfaces: 'select("selected-interfaces@2", {requirements: subject})'
   subject: subject
-when: '!(exists("reviews-for@2", {subject: subject})) && none("reusable-requirements-review@1", {requirements: subject})'
+when: '!(exists("reviews-for@2", {subject: subject})) && none("reusable-requirements-review@2", {requirements: subject})'
 priority: 100
 links:
   REV:
