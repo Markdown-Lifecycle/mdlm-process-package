@@ -1,6 +1,6 @@
 ---
 id: elaborate-requirements
-version: 1
+version: 2
 skills:
 - skills/product-quality.md@8
 - skills/typed-requirements.md@23
@@ -16,4 +16,4 @@ Choose the next parent from the stakeholder roots and existing software requirem
 
 Use the supplied direct proposal guidance and payload schema. The CLI supplies identities, exact required links and publication markers. Publish one successor RQS in the same lineage; the CLI selects the graph and records whether it is complete. Then obtain independent requirements review of the successor. That review assesses only the new requirements and group, so its rows stay small; the earlier passing judgments keep their credit.
 
-Once this group passes and its children are leaves you will not decompose further, export `mdlm verification context <exact-RQS> --output <new-file> --json` and start independent verification for those leaves while other groups continue. Before publishing those activities, rebind them to the then-current RQS as plan-verification describes. Implementation becomes available once the graph is complete: every stakeholder root is decomposed and at least one software leaf exists. From then on implementation ranks first; elaborate further only where a leaf is not yet concrete enough to implement and verify. If stakeholder refinement after implementation adds a root that is not yet decomposed, elaboration reopens until the graph is complete again.
+Once this group passes and its children are leaves you will not decompose further, export `mdlm verification context <exact-RQS> --output <new-file> --json` and start independent verification for those leaves while other groups continue. Those activities keep that set as their authoring subject while later groups are elaborated. Implementation becomes available once the graph is complete: every stakeholder root is decomposed and at least one software leaf exists. From then on implementation ranks first; elaborate further only where a leaf is not yet concrete enough to implement and verify. If stakeholder refinement after implementation adds a root that is not yet decomposed, elaboration reopens until the graph is complete again.
