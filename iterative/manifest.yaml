@@ -40,6 +40,8 @@ kernel_capabilities:
   staged-requirements@1:
     type: RQS
     action: elaborate-requirements
+  interface-retarget@1:
+    type: RQS
   verification-applicability@1:
     type: RES
   independent-verification@1:
