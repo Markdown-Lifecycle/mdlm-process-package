@@ -1,11 +1,14 @@
 ---
 id: plan-verification
-version: 31
+version: 32
 skills:
 - skills/review-policy.md@1
+- skills/verification-checks.md@1
 ---
 
 # Author independent verification
+
+Apply the supplied verification-checks skill to every activity, including its dry run and the coverage check after the first IMP.
 
 Give a fresh verification author `mdlm verification context <exact-RQS-or-EXP> --output <new-file> --json`. Supply that export, the public operation contact, and a source-free projection of the selected direct guidance containing only action, subject, package, prompt, payloadSchemas and candidates. Pass these fields unchanged with saved file paths and digests; they identify the selected action/version, exact subject, package identity/digest and candidate bindings. Keep the full guidance context with the lifecycle author.
 

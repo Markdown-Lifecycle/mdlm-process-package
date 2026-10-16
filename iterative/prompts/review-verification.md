@@ -1,13 +1,14 @@
 ---
 id: review-verification
-version: 10
+version: 11
 skills:
 - skills/review-policy.md@1
+- skills/verification-checks.md@1
 ---
 
 # Review verification adequacy
 
-Classify findings with the supplied review-policy skill. A fresh reviewer receives the requirements-only authoring export, exact activity and committed verifier source. Keep product implementation source outside this review. Check that expected outcomes come from requirements and public contracts, not observed implementation behavior. Validate method fit and each target's stated obligations and coverage argument. An activity may address part of a requirement; assess that part explicitly and identify dependencies on other activities rather than claiming it establishes the whole requirement. A link to a test is not sufficient. Shared scripts are encouraged when they cover each obligation clearly.
+Classify findings with the supplied review-policy skill and judge oracles against the supplied verification-checks skill. An activity whose coverage rationale records no dry run, or whose dry run shows it cannot pass a correct product, is `needs-change`. A fresh reviewer receives the requirements-only authoring export, exact activity and committed verifier source. Keep product implementation source outside this review. Check that expected outcomes come from requirements and public contracts, not observed implementation behavior. Validate method fit and each target's stated obligations and coverage argument. An activity may address part of a requirement; assess that part explicitly and identify dependencies on other activities rather than claiming it establishes the whole requirement. A link to a test is not sufficient. Shared scripts are encouraged when they cover each obligation clearly.
 
 Compare changed lifecycle obligations and verifier coverage with their exact prior
 or originating context and authorized intent, explaining removed or weakened duties
