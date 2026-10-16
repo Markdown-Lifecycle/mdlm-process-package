@@ -1,6 +1,6 @@
 ---
 id: product-quality
-version: 8
+version: 9
 ---
 
 # Shared product quality expectations
@@ -75,8 +75,13 @@ them as product requirements does not establish compliance.
   otherwise record it as permitted variation. Do not impose a language or algorithm
   without need.
 - For an interface used only between the product's own components, require defined
-  behavior for what those components send and one general refusal for everything
-  else, unless the stakeholder names other callers.
+  behavior for what those components send, unless the stakeholder names other
+  callers. For anything else require only the operating profile's protected
+  outcomes: no crash; no bad, old or unreadable value shown or acted on as current;
+  later valid input still works. A value that passes every application check is
+  good whatever message carried it. Do not require exact refusals, grammar
+  conformance or deadlines for that input, constrain raw input size or shape beyond
+  the trusted parser, or re-specify trusted platform components.
 - Does the architecture/depth rationale fit each system? Do the leaves settle the
   required behavior, and do the children collectively satisfy every parent,
   including shared state, failures and cross-component interactions? For a
@@ -134,13 +139,8 @@ content search where missing links may conceal a relevant dependency. Retain
 material discovered context with its exact revisions and repository cut in the
 existing review evidence, and stop when the concrete review questions are resolved.
 
-Each blocking finding cites the affected commitment or stakeholder outcome,
-identifies the concrete mismatch or justified evidence gap, and explains its
-impact. A demonstrated violation of a selected requirement or incorporated clause
-is blocking however unusual the input, unless the stakeholder narrows the
-requirement. Return pass when no blocking finding remains. Optional improvements
-are nonblocking; they add no requirement or acceptance criterion without a
-stakeholder decision that names the need. Authors address concrete findings
-against the same contract, preserving prior evidence and requirement lineage.
+Classify and report findings by the supplied review-policy skill. Authors address
+concrete findings against the same contract, preserving prior evidence and
+requirement lineage.
 The CLI owns schema, identity and receipt mechanics; review judges meaning,
 collective coverage, assumptions and evidence adequacy.

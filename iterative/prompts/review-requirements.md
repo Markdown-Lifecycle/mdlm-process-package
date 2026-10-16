@@ -1,8 +1,9 @@
 ---
 id: review-requirements
-version: 35
+version: 36
 skills:
-- skills/product-quality.md@8
+- skills/product-quality.md@9
+- skills/review-policy.md@1
 - skills/typed-requirements.md@24
 ---
 
@@ -26,4 +27,4 @@ For each `informed-by` link in the requirement graph, read its exact EXP/OBS ori
 
 Read the exact ICD records supplied in interfaces. Apply typed-requirements' normative ownership rule: assess the applicable stable clauses named by each owning REQ, and report required behavior found only in rationale or without an explicit owner. Judge those obligations against both endpoint responsibilities, assumptions and integration evidence. Referenced descriptive or provisional design choices are not automatically requirements. Old interface evidence applies to its exact bindings; a revised contract needs an explicit applicability assessment. When the set retargets an agreement, the graph's `interfaceRetargets` lists each unchanged requirement whose binding moved from `bound` to `selected`, and those requirements are back in your assessment rows. Compare the clauses each one cites in both revisions. Mark it `valid` only if its unchanged wording still states the right obligation under the new clauses; otherwise mark it `needs-change`.
 
-Check that every input dimension of an incorporated interface is bounded or explicitly declared unbounded with a rationale: sizes, counts, lengths, rates, durations and optional parts such as a request body. A universal clause such as "refuse every request that is not X" is `needs-change` unless X is fully settled; otherwise each implementation review finds the next unstated input case. Check that the interface clauses and requirements a group relies on can all hold together for every input, including timing against validation: a deadline and a duty to refuse invalid input conflict when, under the stated bounds, the input needed for that decision can arrive too late to validate and refuse within the deadline. When they cannot, mark the owning requirement `needs-change` and give a concrete counterexample input.
+For stakeholder roots, check that each traces to a stated intent sentence or stakeholder decision, uses the stakeholder's terms and carries no protocol detail, interface clause or unstated number; an obligation with no stakeholder source is `needs-change` unless it is a derived obligation the stakeholder approved. For an interface, check that it names its trusted platform components and does not re-specify them, and that obligations for input no named caller sends are limited to the operating profile's protected outcomes. Check that every input dimension the product itself interprets is bounded or explicitly declared unbounded with a rationale: sizes, counts, lengths, rates, durations and optional parts such as a request body. A universal clause such as "refuse every request that is not X" is `needs-change` unless X is fully settled; otherwise each implementation review finds the next unstated input case. Check that the interface clauses and requirements a group relies on can all hold together for every input a named caller sends, including timing against validation: a deadline and a duty to refuse invalid input conflict when, under the stated bounds, the input needed for that decision can arrive too late to validate and refuse within the deadline. When they cannot, mark the owning requirement `needs-change` and give a concrete counterexample input.
