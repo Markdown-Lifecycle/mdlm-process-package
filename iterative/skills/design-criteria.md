@@ -51,8 +51,8 @@ is a requirement.
 - Timing races inside a window the user has already been warned about (a failure was
   shown, or a leave-page or unsaved-changes warning was accepted) get only the
   protected outcomes: no crash, no corruption, a late change never overwrites a newer
-  one, and the status never claims success for an unconfirmed change. Record the
-  behaviour as a DC-n; do not raise it as a stakeholder question.
+  one, the status never claims success for an unconfirmed change, and later valid
+  input (such as the next save) still works. Record the remaining behaviour as a DC-n; do not raise it as a stakeholder question.
 - Saved data survives only the failures the operating profile names (default: process
   crash or kill). A derived obligation or child wording cannot raise that level.
 - Limits on input and edge cases outside ordinary use (very long or unusual text,
