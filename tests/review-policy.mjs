@@ -16,6 +16,7 @@ for (const id of reviews) {
   const policy = context.prompt.skills.find(skill => skill.reference.startsWith('skills/review-policy.md@'));
   assert.ok(policy?.content.includes('Verification adequacy review'), `${id} must export the review-policy skill content`);
   loadedBy[id] = policy.reference;
+  assert.ok(context.prompt.skills.some(skill => skill.reference.startsWith('skills/design-criteria.md@') && skill.content.includes('Simplest mechanism')), `${id} must export the design-criteria skill`);
   if (id === 'review-verification') assert.ok(context.prompt.skills.some(skill => skill.reference.startsWith('skills/verification-checks.md@') && skill.content.includes('Dry run')), 'Adequacy review must export the verification-checks skill');
 }
 console.log(JSON.stringify({ok: true, loadedBy}, null, 2));

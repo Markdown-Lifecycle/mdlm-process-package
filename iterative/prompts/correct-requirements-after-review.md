@@ -1,10 +1,11 @@
 ---
 id: correct-requirements-after-review
-version: 30
+version: 31
 skills:
 - skills/product-quality.md@9
-- skills/review-policy.md@1
+- skills/review-policy.md@2
 - skills/typed-requirements.md@24
+- skills/design-criteria.md@1
 ---
 
 # Correct requirements after set or implementation Review
