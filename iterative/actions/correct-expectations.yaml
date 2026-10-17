@@ -1,9 +1,9 @@
 kind: action-definition
 id: correct-expectations
-version: 22
+version: 23
 description: Correct a wrong acceptance expectation
 capability: requirements
-prompt_ref: prompts/correct-expectations.md@28
+prompt_ref: prompts/correct-expectations.md@29
 types:
 - REQ
 - DCP

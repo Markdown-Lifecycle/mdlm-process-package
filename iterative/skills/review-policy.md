@@ -1,6 +1,6 @@
 ---
 id: review-policy
-version: 1
+version: 2
 ---
 
 # Review severity and stopping
@@ -27,9 +27,17 @@ improvements do not block and add no requirement or acceptance criterion without
 stakeholder decision that names the need. Return pass when no blocking finding
 remains.
 
+Findings about correctly classified design criteria (DC-n, see design-criteria) do not block unless the choice endangers a requirement or protected outcome; record them as nonblocking. Misclassification of an outcome as a criterion is blocking. A formal verification method is not inadequate for leaving a DC-n design decision unchecked; this does not apply to EXP criteria, whose activities verify them as before.
+
 Review the whole relevant contract in one pass, report every finding family you
 see, and say what you did not examine.
 
 After two failed rounds in the same finding class on the same target, the author
 records a root-cause and contract decision before the next correction instead of
-patching again.
+patching again. The decision first checks the item's tier (design-criteria). For a
+verification method, a second decision on the same activity reconsiders the observation
+method. The activity may narrow its claim to stable checkpoints only if named
+complementary activities or declared exact-source inspection establish every remaining
+requirement obligation; preserve frozen obligations and explain the transferred
+coverage. If no adequate method is available, leave the obligation unverified; changing
+the requirement needs its normal authorized route.

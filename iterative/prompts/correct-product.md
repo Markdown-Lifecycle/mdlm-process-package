@@ -1,10 +1,11 @@
 ---
 id: correct-product
-version: 36
+version: 37
 skills:
 - skills/product-quality.md@9
 - skills/typed-requirements.md@24
 - skills/source-trace.md@11
+- skills/design-criteria.md@1
 ---
 
 # Correct the product against exact evidence

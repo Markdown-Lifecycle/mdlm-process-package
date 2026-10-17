@@ -1,11 +1,12 @@
 ---
 id: correct-implementation-after-review
-version: 37
+version: 38
 skills:
 - skills/product-quality.md@9
-- skills/review-policy.md@1
+- skills/review-policy.md@2
 - skills/typed-requirements.md@24
 - skills/source-trace.md@11
+- skills/design-criteria.md@1
 ---
 
 # Correct the product against exact evidence

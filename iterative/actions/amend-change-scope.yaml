@@ -1,9 +1,9 @@
 kind: action-definition
 id: amend-change-scope
-version: 10
+version: 11
 description: Revise the change proposal for approval
 capability: change
-prompt_ref: prompts/amend-change.md@10
+prompt_ref: prompts/amend-change.md@11
 types:
 - CHG
 subjects: select("current-requirements@1", {})

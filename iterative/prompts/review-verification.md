@@ -1,9 +1,10 @@
 ---
 id: review-verification
-version: 11
+version: 12
 skills:
-- skills/review-policy.md@1
-- skills/verification-checks.md@1
+- skills/review-policy.md@2
+- skills/verification-checks.md@2
+- skills/design-criteria.md@1
 ---
 
 # Review verification adequacy

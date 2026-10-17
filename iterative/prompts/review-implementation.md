@@ -1,9 +1,10 @@
 ---
 id: review-implementation
-version: 40
+version: 41
 skills:
 - skills/product-quality.md@9
-- skills/review-policy.md@1
+- skills/review-policy.md@2
+- skills/design-criteria.md@1
 - skills/typed-requirements.md@24
 - skills/source-trace.md@11
 ---
@@ -25,3 +26,5 @@ When the implementation follows a requirement and a concrete counterexample show
 Name any incorporated exact ICD clauses that the counterexample depends on. A stronger README or external stakeholder ruling cannot substitute for a corrected lifecycle requirement. Record an authorized departure explicitly as a departure; do not describe it as satisfying the unchanged requirement.
 
 When a result carries historical_observation, inspect its original RES and predecessor IMP, unchanged source and attribution, exact retained method, original receipt/report/streams/artifacts and execution times. Its successor links scope the current applicability claim and do not claim a new execution. The kernel authenticates recorded bindings and disqualifying attempts; you still judge every current obligation, shared assumptions, environmental relevance and freshness, including implications of changed siblings or unresolved relevant findings. Require a fresh run when the claim needs another sample or an unknown relevant runtime condition. Historical evidence transfers no earlier implementation Review, conformance or stakeholder acceptance. Return an independent current verdict over the complete selection.
+
+A product that deviates from a recorded design criterion while every requirement still holds is not a defect; note the deviation and ask the author to record the new choice.
