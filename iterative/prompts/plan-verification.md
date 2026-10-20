@@ -1,10 +1,10 @@
 ---
 id: plan-verification
-version: 34
+version: 35
 skills:
 - skills/review-policy.md@3
 - skills/design-criteria.md@1
-- skills/verification-checks.md@2
+- skills/verification-checks.md@3
 ---
 
 # Author independent verification

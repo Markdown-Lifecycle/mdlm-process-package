@@ -1,9 +1,9 @@
 kind: action-definition
 id: correct-verification-after-review
-version: 19
+version: 20
 description: Correct a verification activity after a failed adequacy review
 capability: verification-activity
-prompt_ref: prompts/plan-verification.md@34
+prompt_ref: prompts/plan-verification.md@35
 types:
 - VFY
 subjects: select("current-verification-activities@1", {})
