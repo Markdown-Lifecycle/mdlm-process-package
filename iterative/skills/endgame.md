@@ -29,7 +29,9 @@ correction could affect.
   is uncertain, treat the activity as affected.
 - **Parse every result mechanically.** A script reads the report or receipt and
   counts passed, failed, errored and skipped cases for every selected activity. The
-  result is clean only when every selected case passed and no activity is missing.
+  result is clean only when every report matches its declared format, lists exactly
+  the activity's declared case IDs with no duplicates or extras, every case passed,
+  each captured exit status agrees with its report, and no activity is missing.
   Never judge a run from a human or agent summary, which can read an error as a pass.
 - **Class-wide pre-review.** Before the full dry run, a reviewer with source access
   inventories every caller of each shared mechanism a finding or correction touched

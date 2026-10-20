@@ -48,8 +48,9 @@ The author keeps one finding ledger for the run, outside the product and verifie
 source. Each review, result or pre-review finding gets a row when it is reported:
 a stable ID (`F-n`, never reused), the exact review or result revision that reported
 it, its severity class, blocking or nonblocking, its disposition (open, fixed,
-declined with reason, scope note, or duplicate of `F-m`) and its causal commit, the
-product or verifier commit that introduced it, plus the fixing commit when fixed.
+declined with reason, scope note, or duplicate of `F-m`) and its causal commit: the
+product or verifier commit, or for a requirements finding the lifecycle revision, that
+introduced it, or `unknown` until investigated; plus the fixing commit when fixed.
 Reviewers name each finding's severity class (see Stakeholder checkpoint). Copy each
 finding from the structured review payload, not from extracted prose.
 Before declaring another product cycle necessary, reconcile duplicates and evidence
