@@ -1,6 +1,6 @@
 ---
 id: review-policy
-version: 2
+version: 3
 ---
 
 # Review severity and stopping
@@ -41,3 +41,41 @@ complementary activities or declared exact-source inspection establish every rem
 requirement obligation; preserve frozen obligations and explain the transferred
 coverage. If no adequate method is available, leave the obligation unverified; changing
 the requirement needs its normal authorized route.
+
+## Finding ledger
+
+The author keeps one finding ledger for the run, outside the product and verifier
+source. Each review, result or pre-review finding gets a row when it is reported:
+a stable ID (`F-n`, never reused), the exact review or result revision that reported
+it, its severity class, blocking or nonblocking, its disposition (open, fixed,
+declined with reason, scope note, or duplicate of `F-m`) and its causal commit, the
+product or verifier commit that introduced it, plus the fixing commit when fixed.
+Reviewers name each finding's severity class (see Stakeholder checkpoint). Copy each
+finding from the structured review payload, not from extracted prose.
+Before declaring another product cycle necessary, reconcile duplicates and evidence
+gaps against the ledger.
+
+## Stakeholder checkpoint
+
+After every review (requirements, verification adequacy, class-wide pre-review and
+implementation), send the stakeholder a short checkpoint: the ledger rows added or
+changed, counted by severity class and blocking status, and the next step with its
+expected cost. Severity classes, most serious first:
+
+1. credential or privacy;
+2. wrong saved value;
+3. data loss;
+4. small display;
+5. other (name it).
+
+The stakeholder may continue, narrow scope or stop; the author continues unless told
+otherwise. A stopping rule the stakeholder sets applies only to the classes it
+names: a rule to stop when only small display findings remain does not cover a new
+credential or wrong-value finding, which is reported at the next checkpoint.
+
+**Stopped with findings, informal verdict** is a terminal state distinct from
+formal acceptance. When the stakeholder stops before acceptance, record their
+informal verdict in their words, the open ledger rows with severity, the exact last
+candidate and what was and was not formally established. Record any hands-on
+session behind the verdict with `record-operational-use` on the exact IMP. Never
+record an accepting ACC for it or describe the product as accepted.
