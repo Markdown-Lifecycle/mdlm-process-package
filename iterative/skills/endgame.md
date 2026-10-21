@@ -20,14 +20,21 @@ correction could affect.
 
 - **Dry runs earn no credit.** A dry run checks a candidate before formal
   execution; it publishes no RES and never sets expected behavior. Use
-  `mdlm execution dry-run` when the installed kernel offers it. Until then, run the
-  activity's committed verifier directly against the candidate product commit, with
-  the activity's own command and pinned environment, and keep its machine-readable
-  report. Re-run only the activities a change could affect: those whose verifier,
-  exercised product source, shared mechanism (including the shared verifier
-  library), requirements or runtime environment the change touches. When the impact
-  is uncertain, treat the activity as affected.
-- **Parse every result mechanically.** A script reads the report or receipt and
+  `mdlm execution dry-run <exact-IMP-or-TRY> [--source <commit>] [--all] --json`.
+  It runs the selected activities in the same native runtime as
+  `mdlm execution run`, writes no lifecycle data and reruns only activities whose
+  text, verifier source, runtime or product inputs changed since their last cached
+  run. `--source` runs a committed candidate product commit before you publish its
+  IMP revision; `--all` reruns every selected activity, for the full dry run. With a
+  kernel that lacks the command, run each affected activity's committed verifier
+  directly against the candidate product commit, with the activity's own command
+  and pinned environment, and keep its machine-readable report. An activity is
+  affected when the change touches its verifier, exercised product source, shared
+  mechanism (including the shared verifier library), requirements or runtime
+  environment. When the impact is uncertain, treat the activity as affected.
+- **Parse every result mechanically.** With the kernel command, a script reads the
+  JSON response: the result is clean only when `ready` is `true` and every selected
+  activity appears with outcome `pass`. Otherwise a script reads each report and
   counts passed, failed, errored and skipped cases for every selected activity. The
   result is clean only when every report matches its declared format, lists exactly
   the activity's declared case IDs with no duplicates or extras, every case passed,
