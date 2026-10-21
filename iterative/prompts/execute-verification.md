@@ -1,7 +1,8 @@
 ---
 id: execute-verification
-version: 6
-skills: []
+version: 7
+skills:
+- skills/endgame.md@1
 ---
 
 # Execute an independent activity and record its results
@@ -10,7 +11,7 @@ Select one exact VFY linked by verification on this product. Run `mdlm execution
 
 Inspect the complete saved receipt in the preserved execution response or `mdlm execution settlement <operation> --json` response. Match `value.evidence` to the exact `git-blob:` locator selected for this result. Use `mdlm execution export <operation> <new-directory> --json` to materialize saved streams, report and artifacts with a file manifest. Settlement and export select the operation's latest receipt; for historical inspection, follow the original-receipt inspection below. The export preserves existing directories and never repeats execution. Inspect the actual observations and artifacts. Submit one RES with evaluates pointing to that exact activity and the captured receipt in top-level evidence.receipt. Preserve the fixed product and requirement/experiment links supplied by guidance. The CLI derives outcome, receipt and case_results and supersedes the current earlier result for this exact product/activity. Author a descriptive title, assessment and correction_target. Use none for pass; distinguish implementation, verification or requirements when diagnosing a failure. Skipped cases and execution errors do not pass. Keep failures and interrupted attempts in history.
 
-Run the other selected activities, then inspect `mdlm verification status <exact-product> --json`. Formal verified requires reviewed sufficient coverage for every selected requirement and current passing cases. Provisional criteria report observations without making a baseline claim. An incomplete coverage argument requires a plan revision, not an optimistic assessment of an old receipt.
+For formal IMP evidence, follow the endgame skill: dry-run the affected activities and obtain a clean, mechanically parsed full dry run before the for-credit pass, then run every selected activity once on the frozen version. Run the other selected activities, then inspect `mdlm verification status <exact-product> --json`. Formal verified requires reviewed sufficient coverage for every selected requirement and current passing cases. Provisional criteria report observations without making a baseline claim. An incomplete coverage argument requires a plan revision, not an optimistic assessment of an old receipt.
 
 ## Apply one original historical observation
 

@@ -1,8 +1,8 @@
 ---
 id: review-verification
-version: 12
+version: 13
 skills:
-- skills/review-policy.md@2
+- skills/review-policy.md@3
 - skills/verification-checks.md@2
 - skills/design-criteria.md@1
 ---

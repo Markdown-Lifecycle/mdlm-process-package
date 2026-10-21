@@ -17,6 +17,8 @@ for (const id of reviews) {
   assert.ok(policy?.content.includes('Verification adequacy review'), `${id} must export the review-policy skill content`);
   loadedBy[id] = policy.reference;
   assert.ok(context.prompt.skills.some(skill => skill.reference.startsWith('skills/design-criteria.md@') && skill.content.includes('Simplest mechanism')), `${id} must export the design-criteria skill`);
+  assert.ok(policy.content.includes('Finding ledger') && policy.content.includes('Stopped with findings, informal verdict'), `${id} must export the ledger, checkpoint and stopped state`);
+  if (id === 'review-implementation') assert.ok(context.prompt.skills.some(skill => skill.reference.startsWith('skills/endgame.md@') && skill.content.includes('One for-credit pass')), 'Implementation review must export the endgame skill');
   if (id === 'review-verification') assert.ok(context.prompt.skills.some(skill => skill.reference.startsWith('skills/verification-checks.md@') && skill.content.includes('Dry run')), 'Adequacy review must export the verification-checks skill');
 }
 console.log(JSON.stringify({ok: true, loadedBy}, null, 2));

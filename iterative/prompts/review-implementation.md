@@ -1,12 +1,13 @@
 ---
 id: review-implementation
-version: 41
+version: 42
 skills:
 - skills/product-quality.md@9
-- skills/review-policy.md@2
+- skills/review-policy.md@3
 - skills/design-criteria.md@1
 - skills/typed-requirements.md@24
 - skills/source-trace.md@11
+- skills/endgame.md@1
 ---
 
 # Review product implementation and current evidence
@@ -15,7 +16,7 @@ A fresh reviewer inspects the exact product against reviewed requirements and pu
 
 For each unchanged selected verification activity, authenticate the exact accepted passing independent adequacy REV and its scope. Where that activity permits reliance, its independently reviewed synthetic controls may establish the method's ability to accept permitted presentations and reject contradictions; implementation review need not repeat those same control judgments solely to establish independence. Preserve every explicit activity obligation. Reassess controls when the method, execution assumptions or relevant evidence differs, or a concrete adequacy concern remains. Independently assess every current product requirement, frozen semantic criterion and complete current observation and source scope. Method adequacy never substitutes for product conformance.
 
-Implementation review has source access, unlike independent verification authoring and coverage review. Preserve that distinction. Judge whether the exercised product matches the recorded exact source and intended operational scope. Include coverage_assessments for every exact selected requirement, with disposition adequate or needs-change and rationale explaining how the selected activity cases collectively cover its obligations. Return concrete findings or pass. The manager registers the complete independent proposal and the author submits those exact bytes.
+Implementation review has source access, unlike independent verification authoring and coverage review. Preserve that distinction. Judge whether the exercised product matches the recorded exact source and intended operational scope. Include coverage_assessments for every exact selected requirement, with disposition adequate or needs-change and rationale explaining how the selected activity cases collectively cover its obligations. Return concrete findings, each with its severity class (review-policy), or pass. The manager registers the complete independent proposal and the author submits those exact bytes.
 
 For an explicitly opted-in formal collection and independent postrun inspection method, use the full existing review context, including frozen VFY criteria, exact executed verifier source, receipt, report, streams and complete captured observations. Judge every frozen semantic criterion for each exact requirement and case, including associations, qualifications, negative behavior and integrated conditions. Record a supported PASS, FAIL or incomplete conclusion with precise source or captured-evidence references in findings and the relevant coverage_assessments rationale. A case-level conclusion covering several criteria passes only when all pass. A contradictory whole message fails even if it contains expected words.
 
