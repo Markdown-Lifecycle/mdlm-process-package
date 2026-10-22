@@ -43,4 +43,13 @@ assert.ok(pkg.actions['deploy-product'].when.source.includes('live-deployments@1
 assert.notEqual(pkg.actions['teardown-deployment'].optional, true, 'Teardown is an Expectation, not optional work');
 assert.ok(pkg.manifest.terminal.when.startsWith('none("live-deployments@1", {}) && '), 'No terminal state while a deployment is live');
 assert.deepEqual(pkg.types.TDN.kernel_managed_payload_paths, ['outcome', 'receipt'], 'Only the kernel can record a teardown outcome');
+const {resolvePrompt} = await import(path.join(kernel, 'dist/direct-prompt.js'));
+const {parseDeploymentConfig} = await import(path.join(kernel, 'dist/aws-cdk-deployment.js'));
+assert.match(parseDeploymentConfig(pkg.actions['deploy-product'].fixed_payload.DPL).synth_image, /^mdlm-cdk-synth@sha256:(?!0{64})[a-f0-9]{64}$/, 'The demo synth image is pinned');
+for (const id of ['implement-product', 'plan-verification', 'deploy-product']) {
+  const {prompt} = await resolvePrompt(pkg, pkg.actions[id].prompt_ref);
+  const skill = prompt?.skills.find(s => s.reference.startsWith('skills/aws-deployment.md@'));
+  assert.ok(skill?.content.includes('CliCredentialsStackSynthesizer') && skill.content.includes('MDLM_RUN_ID') && skill.content.includes('product_paths'), `${id} must load the aws-deployment skill`);
+}
+assert.ok(pkg.types.VFY.payload_schema.properties.product_paths, 'VFY may declare product_paths');
 console.log('deployment records: ok');

@@ -99,6 +99,13 @@ payload_schema:
     verification_image:
       type: string
       pattern: ^(?:[^\s]+@)?sha256:[0-9a-f]{64}$
+    product_paths:
+      type: array
+      minItems: 1
+      items:
+        type: string
+        pattern: \S
+      description: Optional globs, relative to the product root, of the product files this activity depends on; only execution dry runs use them (kernel issue 1140).
     verification_command:
       type: array
       minItems: 1

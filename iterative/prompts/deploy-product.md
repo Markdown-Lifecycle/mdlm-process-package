@@ -3,6 +3,7 @@ id: deploy-product
 version: 1
 skills:
 - skills/endgame.md@1
+- skills/aws-deployment.md@1
 ---
 
 # Deploy the frozen product for its for-credit pass
@@ -15,4 +16,4 @@ Submit one DPL that cites the completed receipt as top-level `evidence.receipt` 
 
 **One deployment per for-credit pass.** Every networked verification activity in the pass runs against this one DPL. Revise each such activity with `revise-verification` so that its only change is the `verified-against` link to this DPL, give its adequacy reviewer the previous revision and that statement, then select the revisions with `update-verification-selection`, preserving the source commit. Run every selected activity once. Implementation review and acceptance are unavailable while the selected activities name more than one DPL. If the deployment fails, drifts (a probe mismatch or a changed stack update time) or passes its `expires_at` during the pass, the affected results are `error`, not `fail`: tear the deployment down, deploy again, retarget and run the whole pass again. Never mix results from two deployments. Any product change means a new frozen commit, a new DPL and a full pass.
 
-The package fixes the synth image, host CDK CLI version (install exactly that version on the host), CDK app path, region, APM project, stack slots, output allowlist, endpoint output, version probe path and maximum lifetime in this action's payload. Do not author them. Deploy for credit only to `mdlm-demo-credit`; the dry-run slots are for `mdlm deployment dry-run`. Tear down every deployment before the run reaches any terminal state (teardown-deployment).
+The package fixes the synth image, host CDK CLI version (install exactly that version on the host), CDK app path, region, APM project, stack slots, output allowlist, endpoint output, version probe path and maximum lifetime in this action's payload. Do not author them. The synth image is the demo's image from the aws-deployment skill; build it on the operator's machine before the first deployment. Deploy for credit only to `mdlm-demo-credit`; the dry-run slots are for `mdlm deployment dry-run`. Tear down every deployment before the run reaches any terminal state (teardown-deployment).

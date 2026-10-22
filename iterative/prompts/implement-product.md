@@ -1,15 +1,18 @@
 ---
 id: implement-product
-version: 38
+version: 39
 skills:
 - skills/product-quality.md@9
 - skills/typed-requirements.md@24
 - skills/source-trace.md@11
 - skills/design-criteria.md@1
 - skills/endgame.md@1
+- skills/aws-deployment.md@1
 ---
 
 # Implement the reviewed product
+
+For a product that ships to AWS, write its CDK app and version endpoint by the aws-deployment skill.
 
 Implement the reviewed requirements in a separate source Git repository. Record its exact source_commit, repository_path, public command and honest file_roles. Plan and publish the independent VFY activities first, with `plan-verification`; the IMP cannot be published without selecting them through verification links, and each selected activity must verify exact requirement revisions in the current RQS. The product author may write development tests, but those tests do not replace the independent requirement-verification activities.
 
