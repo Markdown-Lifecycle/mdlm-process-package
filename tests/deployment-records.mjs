@@ -42,4 +42,5 @@ for (const id of ['review-implementation', 'accept-product']) assert.ok(pkg.acti
 assert.ok(pkg.actions['deploy-product'].when.source.includes('live-deployments@1'), 'A live deployment blocks the next one');
 assert.notEqual(pkg.actions['teardown-deployment'].optional, true, 'Teardown is an Expectation, not optional work');
 assert.ok(pkg.manifest.terminal.when.startsWith('none("live-deployments@1", {}) && '), 'No terminal state while a deployment is live');
+assert.deepEqual(pkg.types.TDN.kernel_managed_payload_paths, ['outcome', 'receipt'], 'Only the kernel can record a teardown outcome');
 console.log('deployment records: ok');

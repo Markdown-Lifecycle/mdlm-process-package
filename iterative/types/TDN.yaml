@@ -2,7 +2,7 @@ kind: type-definition
 id: TDN
 version: 1
 name: Teardown
-description: Teardown of one exact deployment, recorded from its teardown receipt. The deployment record stays immutable; this separate record shows the second event.
+description: Teardown of one exact deployment. The kernel fills outcome and receipt from the completed teardown receipt for the linked deployment; the deployment record stays immutable and this separate record shows the second event.
 extends: titled-datum@1
 lifecycle:
   authorship: authored
@@ -42,4 +42,6 @@ outgoing_links:
       maximum: 1
     freeze_resolution: already-exact
     inverse_label: incoming-tears-down
-kernel_managed_payload_paths: []
+kernel_managed_payload_paths:
+  - outcome
+  - receipt
