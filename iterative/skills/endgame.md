@@ -69,9 +69,10 @@ correction could affect.
   class could reach, replay the pattern at runtime in each, fix the shared
   mechanism, and replay every earlier reproducer of the class. Repeat in rounds
   until a round finds nothing blocking, up to the round cap agreed with the
-  stakeholder in the checkpoint that starts the sweep. After the last round, fix
-  what it finds in severity classes 1–3 and anything that breaks the proportionality
-  floor, record the rest as nonblocking ledger rows, and go on to the dry run.
+  stakeholder in the checkpoint that starts the sweep. After the last round, stop
+  sweeping, fix every blocking finding it reported, ledger the nonblocking ones and
+  go on to the dry run. The cap ends the search, never the fixing; the
+  proportionality floor alone decides which warned-window ordering cases block.
 - **Judge against the proportionality floor.** The operating profile records the
   proportionality floor: the protected outcomes a race inside a window the user was
   warned about must keep. A narrower ordering case that keeps every protected
