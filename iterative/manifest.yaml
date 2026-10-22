@@ -44,6 +44,10 @@ kernel_capabilities:
     type: RQS
   verification-applicability@1:
     type: RES
+  aws-cdk-deployment@1:
+    type: DPL
+    implementation_type: IMP
+    action: deploy-product
   independent-verification@1:
     type: VFY
     requirement_type: REQ
@@ -66,10 +70,10 @@ provenance:
   normative_scope: this-package-only
 direct_contract: mdlm-direct@1
 terminal:
-  when: '(none("current-requirements@1", {}) && exists("current-experiments@1", {}) && every("current-experiments@1",
+  when: 'none("live-deployments@1", {}) && ((none("current-requirements@1", {}) && exists("current-experiments@1", {}) && every("current-experiments@1",
     {}, exp => exists("closed-experiment@2", {experiment: exp}))) || (exists("accepted-formal-scope@2", {}) && every("current-experiments@1", {}, exp => none("comparison-baseline-for@1",
-    {experiment: exp}) || exists("closed-experiment@2", {experiment: exp})))'
+    {experiment: exp}) || exists("closed-experiment@2", {experiment: exp}))))'
   outcome: profile-boundary-reached
   reason: Exploration is closed without formal requirements, or the current formal scope is independently reviewed,
-    verified and stakeholder accepted with comparison exploration closed. This profile boundary alone does not establish
+    verified and stakeholder accepted with comparison exploration closed, and every deployment is torn down. This profile boundary alone does not establish
     product acceptance, a requirements baseline or lifecycle completion; inspect the exact formal evidence for those claims.

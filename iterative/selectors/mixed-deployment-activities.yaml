@@ -1,0 +1,20 @@
+kind: selector-definition
+id: mixed-deployment-activities
+version: 1
+description: Selected activities whose deployment differs from another selected activity's; a for-credit pass runs against one deployment
+parameters:
+- name: product
+  kind: revision
+  types: [IMP]
+result_kind: revision
+query:
+  from:
+    relation: outgoing-links
+    of: product
+    link: verification
+    emit: target
+    types: [VFY]
+  as: item
+  where: 'exists("deployment-for-activity@1", {activity: item}) && !every("selected-verification-activities@1", {product: product}, other => none("deployment-for-activity@1", {activity: other}) || select("deployment-for-activity@1", {activity: other}) == select("deployment-for-activity@1", {activity: item}))'
+  distinct: true
+  order_by: [identity.revision_id]
