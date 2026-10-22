@@ -1,6 +1,6 @@
 ---
 id: endgame
-version: 1
+version: 2
 ---
 
 # Dry runs, then one for-credit pass
@@ -46,9 +46,14 @@ correction could affect.
   shared renderer). For each finding, replay at runtime its exact reproducer, both
   orders of any two responses that can race, and the neighbouring behaviour of every
   listed caller. Reading source alone does not complete pre-review. Each fix it
-  causes gets its own reproducer replay before step 3.
+  causes gets its own reproducer replay before step 3. Pre-review is clean only when
+  a full round finds nothing blocking and no blocking ledger row from it is open.
 - **Full dry run.** Run every selected activity on the exact candidate that will be
   frozen, and parse the result. Only a clean parsed result freezes it.
+- **Gate the for-credit pass on a clean pre-review.** Never start a for-credit pass,
+  or publish the IMP revision it will freeze, while class-wide pre-review has an open
+  blocking finding. A pass on a version with known defects only feeds an
+  implementation review that must fail, and costs another pass after the fix.
 - **One for-credit pass.** Freeze one version: the product commit, the verifier
   commit, the selected VFY revisions and the pinned environment. Publish the IMP
   revision for that version, then run every selected activity once with
@@ -57,7 +62,34 @@ correction could affect.
   for-credit pass again runs everything on a new frozen version. Historical
   applicability (execute-verification) remains available only where its own
   unchanged-source rules hold.
+- **Sweep a repeating class.** When a review or pre-review finds a second variant of
+  a finding class already in the ledger (for example a stale result left on screen
+  after a failed, lost or late reply), stop fixing variants one at a time. Before the
+  next review, run one class-wide sweep: list every screen, surface or endpoint the
+  class could reach, replay the pattern at runtime in each, fix the shared
+  mechanism, and replay every earlier reproducer of the class. Repeat in rounds
+  until a round finds nothing blocking, up to the round cap agreed with the
+  stakeholder in the checkpoint that starts the sweep. After the last round, stop
+  sweeping, fix every blocking finding it reported, ledger the nonblocking ones and
+  go on to the dry run. The cap ends the search, never the fixing; the
+  proportionality floor alone decides which warned-window ordering cases block.
+- **Judge against the proportionality floor.** The operating profile records the
+  proportionality floor: the protected outcomes a race inside a window the user was
+  warned about must keep. A narrower ordering case that keeps every protected
+  outcome is a nonblocking ledger row. Put the floor text word for word in every
+  sweep, inspector and implementation reviewer brief.
+- **Split judgment of browser evidence.** When for-credit evidence carries screen
+  captures for postrun inspection, give each such activity its own independent
+  inspector before implementation review. The inspector judges every frame and case
+  of that one activity against its frozen criteria and reports PASS, FAIL or
+  incomplete per case with frame references. Each FAIL enters the ledger. An
+  inspector's pass does not close an open ledger row; the author carries rows
+  forward.
 - **Then review and accept.** Independent implementation review judges the frozen
-  version and its for-credit results. Acceptance follows a passing review. A
+  version and its for-credit results, authenticating and spot-checking the
+  per-activity inspection reports rather than judging every frame itself. Acceptance follows a passing review. A
   stakeholder who stops before then ends the run in "stopped with findings, informal
   verdict" (review-policy), not in acceptance.
+- **Keep progress snapshots.** Keep writing any periodic progress snapshot the run
+  requires through the endgame. Long passes, sweeps and reviews make the schedule
+  easy to miss, so check the time since the last snapshot at every event.

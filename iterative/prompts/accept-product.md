@@ -1,9 +1,9 @@
 ---
 id: accept-product
-version: 7
+version: 8
 skills:
 - skills/design-criteria.md@1
-- skills/endgame.md@1
+- skills/endgame.md@2
 ---
 
 # Accept the working tiny product

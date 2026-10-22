@@ -1,9 +1,9 @@
 ---
 id: correct-requirements-review
-version: 10
+version: 11
 skills:
 - skills/product-quality.md@9
-- skills/review-policy.md@3
+- skills/review-policy.md@4
 - skills/design-criteria.md@1
 - skills/typed-requirements.md@24
 ---

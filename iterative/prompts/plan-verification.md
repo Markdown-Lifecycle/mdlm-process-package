@@ -1,8 +1,8 @@
 ---
 id: plan-verification
-version: 35
+version: 36
 skills:
-- skills/review-policy.md@3
+- skills/review-policy.md@4
 - skills/design-criteria.md@1
 - skills/verification-checks.md@3
 ---

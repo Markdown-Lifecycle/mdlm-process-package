@@ -1,9 +1,9 @@
 kind: action-definition
 id: correct-product
-version: 27
+version: 28
 description: Correct a failed verification or stakeholder rejection
 capability: implementation
-prompt_ref: prompts/correct-product.md@38
+prompt_ref: prompts/correct-product.md@39
 types:
 - IMP
 subjects: select("implementation-failures@1", {})

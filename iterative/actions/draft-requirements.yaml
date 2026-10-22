@@ -1,9 +1,9 @@
 kind: action-definition
 id: draft-requirements
-version: 26
+version: 27
 description: Draft necessary requirements for the selected formal scope
 capability: requirements
-prompt_ref: prompts/draft-requirements.md@33
+prompt_ref: prompts/draft-requirements.md@34
 optional: true
 types:
   - REQ
