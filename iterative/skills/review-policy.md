@@ -1,6 +1,6 @@
 ---
 id: review-policy
-version: 3
+version: 4
 ---
 
 # Review severity and stopping
@@ -68,6 +68,11 @@ expected cost. Severity classes, most serious first:
 3. data loss;
 4. small display;
 5. other (name it).
+
+Send every checkpoint, decision request and acknowledgement of a stakeholder
+decision through the stakeholder's own channel named in the run brief (in T3 Code,
+`t3_thread_send` to the stakeholder thread). A reply written only in the run's own
+thread or notes does not reach the stakeholder.
 
 The stakeholder may continue, narrow scope or stop; the author continues unless told
 otherwise. A stopping rule the stakeholder sets applies only to the classes it

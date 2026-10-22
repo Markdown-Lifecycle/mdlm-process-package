@@ -1,12 +1,12 @@
 ---
 id: correct-product
-version: 38
+version: 39
 skills:
 - skills/product-quality.md@9
 - skills/typed-requirements.md@24
 - skills/source-trace.md@11
 - skills/design-criteria.md@1
-- skills/endgame.md@1
+- skills/endgame.md@2
 ---
 
 # Correct the product against exact evidence

@@ -1,8 +1,8 @@
 ---
 id: execute-verification
-version: 7
+version: 8
 skills:
-- skills/endgame.md@1
+- skills/endgame.md@2
 ---
 
 # Execute an independent activity and record its results

@@ -1,9 +1,9 @@
 kind: action-definition
 id: review-verification
-version: 11
+version: 12
 description: review verification
 capability: review
-prompt_ref: prompts/review-verification.md@14
+prompt_ref: prompts/review-verification.md@15
 types:
 - REV
 subjects: select("current-verification-activities@1", {})
