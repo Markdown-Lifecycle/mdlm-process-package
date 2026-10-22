@@ -131,8 +131,9 @@ seconds, with no AWS credentials.
   requirement, including a crash or timeout of the product's function. Record
   `error`, with the reason, only when the case could not observe the product: a
   connection refused, reset or timed out before any answer, a proxy refusal, or the
-  stage's own throttling response (`429`). The kernel already turns a version probe
-  mismatch or a stack change during the run into `error`. Never retry a case until
+  stage's own throttling response (`429`). The kernel turns a version probe mismatch before
+  or after the run into `error`. It does not yet detect a stack update that keeps
+  the same commit, so nobody changes the deployment during a pass. Never retry a case until
   it passes; any bounded retry after `429` is part of the declared method and is
   reported.
 - **Stay inside the limits.** Keep concurrent requests at or below the function's
