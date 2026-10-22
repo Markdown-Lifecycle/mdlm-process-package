@@ -1,0 +1,19 @@
+kind: action-definition
+id: teardown-deployment
+version: 1
+description: Tear down a deployment before any terminal state
+capability: teardown
+prompt_ref: prompts/teardown-deployment.md@1
+types:
+  - TDN
+subjects: select("live-deployments@1", {})
+inputs:
+  deployment: subject
+when: 'true'
+priority: 110
+links:
+  TDN:
+    tears-down: deployment
+fixed_payload:
+  TDN:
+    publication: recorded

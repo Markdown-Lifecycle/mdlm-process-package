@@ -1,0 +1,19 @@
+kind: selector-definition
+id: deployment-for-activity
+version: 1
+description: The deployment one verification activity runs against, if any
+parameters:
+- name: activity
+  kind: revision
+  types: [VFY]
+result_kind: revision
+query:
+  from:
+    relation: outgoing-links
+    of: activity
+    link: verified-against
+    emit: target
+    types: [DPL]
+  as: item
+  distinct: true
+  order_by: [identity.revision_id]

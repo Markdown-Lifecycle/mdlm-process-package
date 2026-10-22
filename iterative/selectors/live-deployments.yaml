@@ -1,0 +1,14 @@
+kind: selector-definition
+id: live-deployments
+version: 1
+description: Deployments without a successful teardown, whatever their outcome
+parameters: []
+result_kind: revision
+query:
+  from:
+    collection: revisions
+    types: [DPL]
+  as: item
+  where: 'item.integrity.transaction_valid == true && none("teardowns-for@1", {deployment: item})'
+  distinct: true
+  order_by: [identity.revision_id]
