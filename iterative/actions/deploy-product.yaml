@@ -19,7 +19,7 @@ links:
 fixed_payload:
   DPL:
     publication: recorded
-    synth_image: ghcr.io/markdown-lifecycle/mdlm-cdk-synth@sha256:0000000000000000000000000000000000000000000000000000000000000000
+    synth_image: mdlm-cdk-synth@sha256:f01976be62ae0ed21d0d33b3311b875da709f779c727aa49301cd0b9b3459606
     cdk_cli_version: 2.1146.0
     cdk_app_path: infra
     region: us-east-1
