@@ -11,7 +11,10 @@ actions. Only the iterative package and distribution advance to 2.5.49; tiny and
 exploratory packages are unchanged. Existing products keep their selected package
 bytes. Source validation uses kernel `474eb9ee2f4b5a2302a2320f3dbf1adc2b3e7ca0`
 with Node 24. Package validation establishes loading, not better author behavior;
-the cold baseline/treatment authoring comparison and independent review are pending.
+a cold baseline/treatment authoring pair passed the four frozen criteria in both
+arms under independent blind assessment, demonstrating no improvement in that
+pair. Independent source review found no actionable findings. This is an
+illustrative clarification, not established prevention of future author errors.
 
 # Unreleased: Endgame lessons from large run 2
 
