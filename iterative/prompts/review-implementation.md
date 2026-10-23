@@ -1,8 +1,8 @@
 ---
 id: review-implementation
-version: 43
+version: 44
 skills:
-- skills/product-quality.md@9
+- skills/product-quality.md@10
 - skills/review-policy.md@4
 - skills/design-criteria.md@1
 - skills/typed-requirements.md@24

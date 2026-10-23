@@ -1,3 +1,21 @@
+# 2.5.49: Show refusal cases excluded by their own trigger
+
+One worked example in the shared `product-quality` skill shows why a requirement
+triggered only by valid inputs cannot require refusal of invalid inputs. It keeps
+the operation trigger separate from success/refusal admission and applies existing
+shared authorization and revision rules before effects. It adds no new obligation,
+review gate, schema, capability or off-profile wire contract.
+
+Skill `product-quality` advances from 9 to 10, along with its consuming prompts and
+actions. Only the iterative package and distribution advance to 2.5.49; tiny and
+exploratory packages are unchanged. Existing products keep their selected package
+bytes. Source validation uses kernel `474eb9ee2f4b5a2302a2320f3dbf1adc2b3e7ca0`
+with Node 24. Package validation establishes loading, not better author behavior;
+a cold baseline/treatment authoring pair passed the four frozen criteria in both
+arms under independent blind assessment, demonstrating no improvement in that
+pair. Independent source review found no actionable findings. This is an
+illustrative clarification, not established prevention of future author errors.
+
 # Unreleased: Endgame lessons from large run 2
 
 `skills/endgame.md` adds five rules. **Gate:** never start a for-credit pass, or publish the IMP revision it will freeze, while class-wide pre-review has an open blocking finding; pre-review is clean only when a full round finds nothing blocking. **Class sweep:** when a review or pre-review finds a second variant of a ledgered finding class, run one class-wide sweep before the next review (list every screen, surface or endpoint the class could reach, replay the pattern at runtime in each, fix the shared mechanism, replay every earlier reproducer), in rounds up to a cap agreed with the stakeholder; the cap ends the search, and every blocking finding of the last round is still fixed. **Proportionality floor:** sweeps, inspectors and implementation reviewers get the operating profile's floor word for word, and a narrower ordering case that keeps every protected outcome is nonblocking. **Per-activity inspectors:** browser evidence for postrun inspection gets one independent inspector per activity before implementation review, which authenticates and spot-checks their reports. **Progress snapshots:** keep any periodic snapshot the run requires through the endgame.

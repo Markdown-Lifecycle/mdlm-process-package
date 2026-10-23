@@ -117,3 +117,27 @@ Class 6 verification guidance from the three large runs (Ledger, Tracker, Clinic
 Large run 2 (Clinic, package 2.5.48) followed the new endgame and exposed six gaps. For-credit pass #1 ran on an IMP published before class-wide pre-review, which then found four blocking defect families; with no route to a corrected IMP before credit, the pass and the implementation review that had to fail on it were wasted. Implementation reviews #2 and #3 found stale-display variants a few at a time (3, then 9 blocking), and the stakeholder-required class-wide sweep over 90 areas found 32 root defects in five rounds (16, 6, 4, 4, 2), after which review #4 found no blocking stale-display finding. The tail stopped only when the stakeholder capped the sweep and made the A6 proportionality floor explicit (decision 03); it had been set as a design default at the operating profile but not agreed as a stakeholder rule. One implementation reviewer could not judge 32 browser cases across hundreds of frames and marked them all incomplete; per-activity inspectors did. A reply written in the run's own thread cost 21 idle minutes before the stakeholder saw it, and hourly progress snapshots lapsed for about 3.5 h during the endgame. Evidence: `deep-dive/large2/stakeholder-log.md` (standing decisions 01–03), `deep-dive/large2/LAUNCH.md`; `clinic2-run/notes/friction.md`, `metrics.md`, `progress.md`.
 
 `skills/endgame.md` gates the for-credit pass on a clean pre-review, adds the class sweep with a stakeholder-agreed round cap, the floor in every sweep, inspector and reviewer brief, per-activity inspectors and progress snapshots. `draft-requirements` asks for the floor as operating-profile item 7, and `skills/review-policy.md` sends checkpoints through the stakeholder's own channel. At the next large run, count for-credit passes started with open pre-review findings (target 0), blocking findings per implementation review after a sweep, sweep rounds against the cap, browser cases marked incomplete by implementation review, and gaps between progress snapshots.
+
+## Refusal cases must satisfy the operation trigger, issue 57
+
+Class 6 application guidance. Harborlight requirements review 021 F-5 found that
+valid-name/adult-confirmation and existing-member event guards excluded the
+invalid/unknown submissions their responses claimed to refuse. Review 054 F-17
+repeated the pattern: a positive-interval guard excluded zero/reversed intervals
+from its invalid-query refusal. Review 021 F-6 also found mutation effects that
+conflicted with shared stale-revision refusal. These are requirements-definition
+counterexamples, not observed product failures. Existing rules already required
+complete conditions, failures and compatible shared duties.
+
+The shared product-quality skill adds one worked booking example applying those
+rules. It separates the operation trigger from success/refusal admission, retains
+shared authorization and revision conditions, and neither adds exact off-profile
+wire handling nor splits branches merely to increase requirement count.
+
+Validate package loading and delivery to all consuming prompts/actions. In a cold
+paired authoring comparison, give both arms the same fresh inspection-scheduling
+intent and only the treatment arm this example. Freeze scoring for reachable
+claimed refusals, stale-effect consistency, no invented permission/off-profile
+grammar and coherent grouping; use independent blind scoring. Preserve first
+candidates and report no demonstrated gain if both arms pass. A single pair cannot
+establish general prevention, speed or cost improvement.
