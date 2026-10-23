@@ -1,8 +1,8 @@
 ---
 id: correct-implementation-after-review
-version: 40
+version: 41
 skills:
-- skills/product-quality.md@9
+- skills/product-quality.md@10
 - skills/review-policy.md@4
 - skills/typed-requirements.md@24
 - skills/source-trace.md@11

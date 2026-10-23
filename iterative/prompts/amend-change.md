@@ -1,8 +1,8 @@
 ---
 id: amend-change
-version: 11
+version: 12
 skills:
-- skills/product-quality.md@9
+- skills/product-quality.md@10
 - skills/design-criteria.md@1
 ---
 

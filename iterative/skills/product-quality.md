@@ -1,6 +1,6 @@
 ---
 id: product-quality
-version: 9
+version: 10
 ---
 
 # Shared product quality expectations
@@ -42,6 +42,16 @@ them as product requirements does not establish compliance.
   boundaries and failures at the level that owns them. Distinguish permitted
   variation from an unresolved decision. Count follows obligations: a small scope
   can need several short REQs or very few; neither number is a goal.
+
+  For example, “When staff submit a booking for an existing room with start before
+  end, create the booking; otherwise refuse an unknown room or nonpositive interval
+  without changing saved data” excludes its own refusal cases: their inputs make
+  the event false. Trigger on the submitted booking operation; put room existence
+  and interval checks in the success/refusal decision. Apply relevant shared
+  authorization and revision-admission rules before requiring effects. Check each
+  refusal the leaf claims against its event. This does not add exact handling for
+  off-profile wire inputs or require splitting branches of one function.
+
 - Use meaningful depth until an implementer and verifier can determine every result
   that a stakeholder outcome or another component depends on. State other choices,
   such as message wording, check order among rejections or option placement, as
