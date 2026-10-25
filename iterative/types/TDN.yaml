@@ -1,0 +1,47 @@
+kind: type-definition
+id: TDN
+version: 1
+name: Teardown
+description: Teardown of one exact deployment. The kernel fills outcome and receipt from the completed teardown receipt for the linked deployment; the deployment record stays immutable and this separate record shows the second event.
+extends: titled-datum@1
+lifecycle:
+  authorship: authored
+  freeze_when: terminal-outcome
+  terminal_payload_field: publication
+  terminal_values:
+    - recorded
+payload_schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  required:
+    - publication
+    - outcome
+    - receipt
+    - assessment
+  properties:
+    publication:
+      const: recorded
+    outcome:
+      enum:
+        - pass
+        - error
+    receipt: &text
+      type: string
+      minLength: 1
+    assessment: *text
+outgoing_links:
+  - id: tears-down
+    description: Exact deployment whose stack and resources this teardown removed.
+    targets:
+      - kind: datum
+        types:
+          - DPL
+        identity: revision
+    cardinality:
+      minimum: 1
+      maximum: 1
+    freeze_resolution: already-exact
+    inverse_label: incoming-tears-down
+kernel_managed_payload_paths:
+  - outcome
+  - receipt

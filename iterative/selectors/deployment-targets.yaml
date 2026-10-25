@@ -1,0 +1,14 @@
+kind: selector-definition
+id: deployment-targets
+version: 1
+description: Current stakeholder-chosen deployment targets; without one, no deployment work is offered
+parameters: []
+result_kind: revision
+query:
+  from:
+    collection: revisions
+    types: [DTG]
+  as: item
+  where: 'state(item, "validity") == "valid" && item.integrity.transaction_valid == true && none("newer-revisions@1", {subject: item})'
+  distinct: true
+  order_by: [identity.revision_id]

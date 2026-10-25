@@ -1,0 +1,23 @@
+kind: action-definition
+id: choose-deployment-target
+version: 1
+description: Opt in to deploying this product, with the stakeholder's chosen deployment target
+capability: deployment-target
+prompt_ref: prompts/choose-deployment-target.md@1
+types:
+  - DTG
+subjects: select("current-requirements@1", {})
+inputs:
+  requirements: subject
+when: 'none("deployment-targets@1", {})'
+priority: 10
+optional: true
+links:
+  DTG:
+    targets: requirements
+fixed_payload:
+  DTG:
+    publication: recorded
+authority:
+  kind: stakeholder
+  name: stakeholder

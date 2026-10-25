@@ -1,0 +1,23 @@
+kind: action-definition
+id: deploy-product
+version: 1
+description: Deploy one exact product revision to its deployment target for its for-credit pass
+capability: deployment
+prompt_ref: prompts/deploy-product.md@1
+types:
+  - DPL
+subjects: select("current-implementations@1", {})
+inputs:
+  product: subject
+  target: 'one("deployment-targets@1", {})'
+  activities: 'select("selected-verification-activities@1", {product: subject})'
+when: 'exists("deployment-targets@1", {}) && none("live-deployments@1", {})'
+priority: 90
+optional: true
+links:
+  DPL:
+    deploys: product
+    deploys-to: target
+fixed_payload:
+  DPL:
+    publication: recorded

@@ -1,0 +1,70 @@
+kind: type-definition
+id: DPL
+version: 1
+name: Deployment
+description: One kernel-attested AWS CDK deployment of one exact product revision to its chosen deployment target (ADR-0009). The kernel fills its fields from the deployment receipt.
+extends: titled-datum@1
+lifecycle:
+  authorship: authored
+  freeze_when: terminal-outcome
+  terminal_payload_field: publication
+  terminal_values:
+    - recorded
+payload_schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  required:
+    - publication
+    - outcome
+    - receipt
+  properties:
+    publication:
+      const: recorded
+    outcome:
+      enum:
+        - pass
+        - error
+    receipt: &text
+      type: string
+      minLength: 1
+    stack:
+      type: object
+    outputs:
+      type: object
+    endpoint: *text
+    deployed_version: *text
+    expires_at: *text
+    probe_path: *text
+outgoing_links:
+  - id: deploys-to
+    description: Exact deployment target the stakeholder chose for this product.
+    targets:
+      - kind: datum
+        types:
+          - DTG
+        identity: revision
+    cardinality:
+      minimum: 1
+      maximum: 1
+    freeze_resolution: already-exact
+    inverse_label: incoming-deploys-to
+  - id: deploys
+    description: Exact product revision whose source commit was deployed.
+    targets:
+      - kind: datum
+        types:
+          - IMP
+        identity: revision
+    cardinality:
+      minimum: 1
+      maximum: 1
+    freeze_resolution: already-exact
+    inverse_label: incoming-deploys
+kernel_managed_payload_paths:
+  - outcome
+  - receipt
+  - stack
+  - outputs
+  - endpoint
+  - deployed_version
+  - expires_at
