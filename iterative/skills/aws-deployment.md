@@ -31,8 +31,9 @@ credentials, and refuses the assembly unless it holds one stack named for the sl
   name from `cdk.json` context. Grants such as `table.grantReadWriteData(fn)` change
   nothing on an immutable role; the role's own policy must already allow the
   product's tables and log groups.
-- **Allowed resources only.** Use Lambda, an API Gateway v2 HTTP API, on-demand
-  DynamoDB and CloudWatch log groups. Add no custom resources, so no `logRetention`
+- **Allowed resources only.** Use only the target's `resource_allowlist` types,
+  drawn from Lambda, an API Gateway v2 HTTP API, on-demand DynamoDB and CloudWatch
+  log groups; the kernel refuses a template with any other type. Add no custom resources, so no `logRetention`
   property, no `autoDeleteObjects` and no S3 buckets. Give each function an explicit
   `LogGroup` with `RetentionDays.ONE_DAY`, passed as its `logGroup`, because Lambda's
   implicit log group sits outside the stack and survives teardown. Set
