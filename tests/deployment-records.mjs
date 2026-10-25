@@ -11,6 +11,8 @@ const {evaluateExpressionValue} = await import(path.join(kernel, 'dist/evaluator
 const loaded = await loadProcessPackage(root);
 assert.equal(loaded.ok, true, JSON.stringify(loaded.diagnostics));
 const pkg = loaded.package;
+assert.deepEqual(pkg.kernelCapabilities['aws-cdk-deployment@1'], {type: 'DPL', implementation_type: 'IMP', action: 'deploy-product', target_type: 'DTG'}, 'Deployment config comes from the product\'s target');
+assert.equal(Object.keys(pkg.actions['deploy-product'].fixed_payload.DPL).join(), 'publication', 'The package fixes no deployment config');
 const datum = (id, links = [], payload = {}, revision = 1) => ({id, type: id.split('-')[0], revision, revision_id: `${id}-r${String(revision).padStart(5, '0')}`, links, payload, created_by: {process_ref: 'fixture@1#exact'}, body: 'Deployment fixture'});
 const link = (type, d) => ({type, target: d.revision_id});
 function holds(data, expression, subject) {
@@ -42,4 +44,14 @@ assert.ok(pkg.actions['deploy-product'].when.source.includes('live-deployments@1
 assert.notEqual(pkg.actions['teardown-deployment'].optional, true, 'Teardown is an Expectation, not optional work');
 assert.ok(pkg.manifest.terminal.when.startsWith('none("live-deployments@1", {}) && '), 'No terminal state while a deployment is live');
 assert.deepEqual(pkg.types.TDN.kernel_managed_payload_paths, ['outcome', 'receipt'], 'Only the kernel can record a teardown outcome');
+// A DTG valid under the package schema supplies the kernel's deployment config (kernel issue 1150).
+const deployment = await import(path.join(kernel, 'dist/aws-cdk-deployment.js'));
+if (deployment.resolveDeploymentConfig) {
+  const settings = {synth_image: `registry.example/mdlm-cdk-synth@sha256:${'a'.repeat(64)}`, cdk_cli_version: '2.1146.0', cdk_app_path: 'infra', region: 'eu-west-2', apm_project: 'example-app', stack_slots: ['example-credit', 'example-dry-1'], dry_run_slots: ['example-dry-1'], output_allowlist: ['ApiEndpoint'], endpoint_output: 'ApiEndpoint', probe_path: '/version', max_lifetime_minutes: 120, resource_allowlist: ['AWS::Lambda::Function', 'AWS::ApiGatewayV2::Api', 'AWS::DynamoDB::Table', 'AWS::Logs::LogGroup']};
+  const target = datum('DTG-example', [], {publication: 'recorded', rationale: 'Stakeholder chose AWS', ...settings});
+  const resolved = deployment.resolveDeploymentConfig({pkg, data: [target]}, target.revision_id);
+  assert.equal(resolved.target, target.revision_id);
+  for (const [field, value] of Object.entries(settings)) assert.deepEqual(resolved.config[field], value, `The kernel reads ${field} from the DTG`);
+  assert.throws(() => deployment.resolveDeploymentConfig({pkg, data: [target]}, undefined), /--target/, 'Target mode needs an exact DTG');
+}
 console.log('deployment records: ok');

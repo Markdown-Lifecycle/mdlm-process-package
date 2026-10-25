@@ -40,7 +40,7 @@ function eligible(data, action, subject) {
 }
 const requirements = datum('RQS-set'), product = datum('IMP-product', [link('implements', requirements)]);
 const target = datum('DTG-aws', [link('targets', requirements)]);
-const deployment = datum('DPL-one', [link('deploys', product), link('deploys-to', target)], {outcome: 'pass'});
+const deployment = datum('DPL-one', [link('deploys', product)], {outcome: 'pass', target: target.revision_id});
 const optIn = ['deploy-product', ...['prepare-deployment', 'plan-deployment-verification'].filter(id => pkg.actions[id])];
 for (const id of optIn) {
   assert.equal(eligible([requirements, product], id, id === 'plan-deployment-verification' ? datum('VFY-a') : product), false, `${id} is not offered without a deployment target`);

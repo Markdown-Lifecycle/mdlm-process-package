@@ -44,6 +44,11 @@ kernel_capabilities:
     type: RQS
   verification-applicability@1:
     type: RES
+  aws-cdk-deployment@1:
+    type: DPL
+    implementation_type: IMP
+    action: deploy-product
+    target_type: DTG
   independent-verification@1:
     type: VFY
     requirement_type: REQ

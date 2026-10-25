@@ -25,6 +25,7 @@ payload_schema:
     - endpoint_output
     - probe_path
     - max_lifetime_minutes
+    - resource_allowlist
     - rationale
   properties:
     publication:
@@ -66,6 +67,16 @@ payload_schema:
     max_lifetime_minutes:
       type: integer
       minimum: 1
+    resource_allowlist:
+      type: array
+      minItems: 1
+      uniqueItems: true
+      items:
+        enum:
+          - AWS::Lambda::Function
+          - AWS::ApiGatewayV2::Api
+          - AWS::DynamoDB::Table
+          - AWS::Logs::LogGroup
     rationale: *text
 outgoing_links:
   - id: targets

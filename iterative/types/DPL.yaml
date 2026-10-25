@@ -34,20 +34,8 @@ payload_schema:
     endpoint: *text
     deployed_version: *text
     expires_at: *text
-    probe_path: *text
+    target: *text
 outgoing_links:
-  - id: deploys-to
-    description: Exact deployment target the stakeholder chose for this product.
-    targets:
-      - kind: datum
-        types:
-          - DTG
-        identity: revision
-    cardinality:
-      minimum: 1
-      maximum: 1
-    freeze_resolution: already-exact
-    inverse_label: incoming-deploys-to
   - id: deploys
     description: Exact product revision whose source commit was deployed.
     targets:
@@ -68,3 +56,4 @@ kernel_managed_payload_paths:
   - endpoint
   - deployed_version
   - expires_at
+  - target
