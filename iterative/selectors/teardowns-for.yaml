@@ -1,0 +1,20 @@
+kind: selector-definition
+id: teardowns-for
+version: 1
+description: Successful teardowns of one exact deployment
+parameters:
+- name: deployment
+  kind: revision
+  types: [DPL]
+result_kind: revision
+query:
+  from:
+    relation: incoming-links
+    of: deployment
+    link: tears-down
+    emit: source
+    types: [TDN]
+  as: item
+  where: state(item, "validity") == "valid" && item.integrity.transaction_valid == true && item.payload.outcome == "pass"
+  distinct: true
+  order_by: [identity.revision_id]

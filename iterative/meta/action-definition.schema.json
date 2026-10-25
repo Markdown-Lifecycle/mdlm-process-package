@@ -39,7 +39,10 @@
         "review",
         "verification-result",
         "independent-result",
-        "verification-activity"
+        "verification-activity",
+        "deployment",
+        "teardown",
+        "deployment-target"
       ]
     },
     "prompt_ref": {

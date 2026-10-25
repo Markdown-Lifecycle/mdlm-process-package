@@ -1,6 +1,6 @@
 kind: type-definition
 id: VFY
-version: 1
+version: 2
 name: Independent verification activity
 description: Requirement-driven verification with a separate committed verifier and explicit case coverage
 extends: titled-datum@1
@@ -137,4 +137,16 @@ outgoing_links:
     maximum: many
   freeze_resolution: already-exact
   inverse_label: incoming-uses-interface
+- id: verified-against
+  description: Exact deployment this activity runs against in the networked verification mode (ADR-0009 section 2).
+  targets:
+  - kind: datum
+    types:
+    - DPL
+    identity: revision
+  cardinality:
+    minimum: 0
+    maximum: 1
+  freeze_resolution: already-exact
+  inverse_label: incoming-verified-against
 kernel_managed_payload_paths: []

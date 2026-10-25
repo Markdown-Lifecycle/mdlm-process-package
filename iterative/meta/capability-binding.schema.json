@@ -20,6 +20,10 @@
       "type": "string",
       "pattern": "^[A-Z]{3,8}$"
     },
+    "target_type": {
+      "type": "string",
+      "pattern": "^[A-Z]{3,8}$"
+    },
     "scope_type": {
       "type": "string",
       "pattern": "^[A-Z]{3,8}$"

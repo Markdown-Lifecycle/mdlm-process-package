@@ -1,0 +1,94 @@
+kind: type-definition
+id: DTG
+version: 1
+name: Deployment target
+description: The stakeholder's opt-in to deploying this product to AWS, with the product's deployment settings (ADR-0009). Without a deployment target, no deployment work is offered.
+extends: titled-datum@1
+lifecycle:
+  authorship: authored
+  freeze_when: terminal-outcome
+  terminal_payload_field: publication
+  terminal_values:
+    - recorded
+payload_schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  required:
+    - publication
+    - synth_image
+    - cdk_cli_version
+    - cdk_app_path
+    - region
+    - apm_project
+    - stack_slots
+    - output_allowlist
+    - endpoint_output
+    - probe_path
+    - max_lifetime_minutes
+    - resource_allowlist
+    - rationale
+  properties:
+    publication:
+      const: recorded
+    synth_image:
+      type: string
+      pattern: ^[^\s@]+@sha256:[a-f0-9]{64}$
+    cdk_cli_version:
+      type: string
+      pattern: ^\d+\.\d+\.\d+$
+    cdk_app_path: &text
+      type: string
+      minLength: 1
+    region:
+      type: string
+      pattern: ^[a-z]{2}(-[a-z]+)+-\d$
+    apm_project:
+      type: string
+      pattern: ^[a-z0-9][a-z0-9-]*$
+    stack_slots: &slots
+      type: array
+      minItems: 1
+      uniqueItems: true
+      items:
+        type: string
+        pattern: ^[A-Za-z][A-Za-z0-9-]{0,127}$
+    dry_run_slots: *slots
+    output_allowlist:
+      type: array
+      minItems: 1
+      uniqueItems: true
+      items:
+        type: string
+        pattern: ^[A-Za-z0-9]{1,255}$
+    endpoint_output: *text
+    probe_path:
+      type: string
+      pattern: ^/
+    max_lifetime_minutes:
+      type: integer
+      minimum: 1
+    resource_allowlist:
+      type: array
+      minItems: 1
+      uniqueItems: true
+      items:
+        enum:
+          - AWS::Lambda::Function
+          - AWS::ApiGatewayV2::Api
+          - AWS::DynamoDB::Table
+          - AWS::Logs::LogGroup
+    rationale: *text
+outgoing_links:
+  - id: targets
+    description: Exact requirement set whose product the stakeholder chose to deploy.
+    targets:
+      - kind: datum
+        types:
+          - RQS
+        identity: revision
+    cardinality:
+      minimum: 1
+      maximum: 1
+    freeze_resolution: already-exact
+    inverse_label: incoming-targets
+kernel_managed_payload_paths: []
