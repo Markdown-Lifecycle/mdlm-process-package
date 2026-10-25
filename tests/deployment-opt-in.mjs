@@ -52,4 +52,13 @@ assert.equal(eligible([requirements, product, target], 'choose-deployment-target
 assert.equal(eligible([requirements, product, target], 'deploy-product', product), true, 'A target offers deployment');
 assert.equal(eligible([requirements, product, target, deployment], 'deploy-product', product), false, 'A live deployment blocks the next one');
 assert.ok(pkg.actions['teardown-deployment'].subjects.source.includes('live-deployments@1') && pkg.actions['teardown-deployment'].optional !== true, 'Teardown is required for every live deployment');
+// The AWS guidance travels only with actions that exist because of the opt-in.
+const optInActions = new Set(['deploy-product', 'prepare-deployment', 'plan-deployment-verification']);
+for (const [id, action] of Object.entries(pkg.actions)) {
+  const {prompt} = await resolvePrompt(pkg, action.prompt_ref);
+  const skill = prompt.skills.find(s => s.reference.startsWith('skills/aws-deployment.md@'));
+  if (optInActions.has(id)) assert.ok(skill?.content.includes('CliCredentialsStackSynthesizer') && skill.content.includes('MDLM_RUN_ID'), `${id} must load the aws-deployment skill`);
+  else assert.equal(skill, undefined, `${id} must not load the aws-deployment skill`);
+  if (optInActions.has(id)) assert.ok(action.when.source.includes('deployment-targets@1'), `${id} must require a deployment target`);
+}
 console.log('deployment opt-in: ok');

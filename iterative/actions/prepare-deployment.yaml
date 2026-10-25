@@ -1,0 +1,24 @@
+kind: action-definition
+id: prepare-deployment
+version: 1
+description: Add the CDK app and version endpoint that deploy this product to its deployment target
+capability: implementation
+prompt_ref: prompts/prepare-deployment.md@1
+types:
+- IMP
+subjects: select("current-implementations@1", {})
+inputs:
+  product: subject
+  requirements: 'one("requirements-for@1", {implementation: subject})'
+  target: 'one("deployment-targets@1", {})'
+when: 'exists("deployment-targets@1", {}) && none("acceptances-for@2", {implementation: subject})'
+priority: 90
+optional: true
+revises:
+  IMP: product
+links:
+  IMP:
+    implements: requirements
+fixed_payload:
+  IMP:
+    publication: recorded

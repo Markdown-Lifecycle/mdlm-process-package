@@ -1,0 +1,21 @@
+kind: action-definition
+id: plan-deployment-verification
+version: 1
+description: Make an independent activity verify the deployed product through its endpoint
+capability: verification-activity
+prompt_ref: prompts/plan-deployment-verification.md@1
+types:
+- VFY
+subjects: select("current-verification-activities@1", {})
+inputs:
+  activity: subject
+  target: 'one("deployment-targets@1", {})'
+when: 'exists("deployment-targets@1", {})'
+priority: 90
+optional: true
+links: {}
+fixed_payload:
+  VFY:
+    publication: recorded
+revises:
+  VFY: activity
