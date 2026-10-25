@@ -104,11 +104,14 @@ ENV PATH=/opt/cdk/node_modules/.bin:$PATH CDK_DISABLE_VERSION_CHECK=1
 WORKDIR /
 ```
 
-Build it with `docker build -t mdlm-cdk-synth:2.1146.0 .` and read the pin for the
-target from `docker image inspect mdlm-cdk-synth:2.1146.0 --format '{{index .RepoDigests 0}}'`.
-The build is not reproducible, so a rebuild on another machine has another digest:
-publish the image to a registry the operator can pull from, or revise the target with
-the stakeholder; never change a pin without a new target revision. `aws-cdk-lib` stays at 2.204.0 because from 2.206.0 on it
+Build it with `docker build -t mdlm-cdk-synth:2.1146.0 .`, then tag and push it to a
+registry the operator's Docker can pull from (`docker tag` and `docker push
+<registry>/mdlm-cdk-synth:2.1146.0`), and record the pushed reference
+`<registry>/mdlm-cdk-synth@sha256:<digest>` from the push output or from
+`docker image inspect <registry>/mdlm-cdk-synth:2.1146.0 --format '{{json .RepoDigests}}'`
+as the target's `synth_image`. A local build alone may have no registry digest, and
+the build is not reproducible, so a rebuild has another digest: never change a pin
+without a new target revision. `aws-cdk-lib` stays at 2.204.0 because from 2.206.0 on it
 writes a `cdk:feature-flag-report` artifact that the kernel's assembly check
 refuses (kernel issue 1146). Install exactly the target's `cdk_cli_version` on the
 host; this recipe pairs with `aws-cdk@2.1146.0`.
